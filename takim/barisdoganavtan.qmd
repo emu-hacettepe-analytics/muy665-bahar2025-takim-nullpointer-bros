@@ -1,0 +1,117 @@
+---
+title: "Barış Doğan AVTAN"
+---
+
+![](images/clipboard-651476334.png)
+
+# Eğitim Bilgileri
+
+•       Hacettepe Üniversitesi – Mühendislik Yönetimi – Yüksek Lisans(Devem Ediyor.)
+
+•       Sakarya Üniversitesi-Mühendislik Fakültesi - Bilgisayar Mühendisliği 
+
+•       Ankara-Ulus Anadolu Teknik Lisesi – Sayısal - Elektronik Bölümü
+
+# İş – Staj Deyimleri
+
+**19.10.2020  Arvento Mobile Systems, Ankara – Kıdemli Bilgisayar Mühendisi**  
+
+İş Tanımı: Arvento bünyesinde geliştirilen CRM projesinin geliştirilmesi, iç ve dış entegrasyonların sağlanması, Arvento mobil teknik servis uygulamasında kullanılacak servislerin geliştirilmesi süreçlerinde aktif rol alıyorum. Ayrıca, CRM portal, CRM Dynamics Helper modüllerinin geliştirilmesi, sisteme yeni modüllerin eklenmesi ve sistem ihtiyaçları doğrultusunda yeni altyapı ile mikroservislerin oluşturulması aşamalarında görev alıyorum.
+
+Teknolojiler :  C#, .NetCore, .Net Mvc, .Net Web Form, .Net Windows Form, React JS
+
+**17.12.2018 – 02.02.2020 Sisoft Sağlık Bilgi Sistemleri, Ankara-Yazılım Geliştirici**  
+
+İş Tanımı: Hastane bilgi yönetim sistemi projesinde sisteme yeni kabiliyetlerin eklenmesinde hataların
+
+düzeltilmesinde ve Sağlık Bakanlığı ve hastanelerde kullanılacak gerekli web raporlama ekranlarının yapım aşamasında rol aldım. 
+
+**15.04.2017 – 17.12.2018 Remote Yazılım Projesi- Bilgisayar Mühendisi**
+
+İş Tanımı: Firma bünyesinde kullanılmak üzere sıfırdan iş, stok ve personel takip uygulamasının proje gereksinimlerinin çıkarılması,geliştirilmesi, kordinasyonu ve projenin yönetilmesini sağladım.
+
+**14.08.2017 – 14.10.2017 Sosyal Güvenlik Kurumu – Bilgi Teknolojileri Genel Müdürlüğü/Ankara-Stajer Bilgisayar Mühendisi**  
+
+İş Tanımı: Kurum içinde kullanılmak üzere eğitim planlama ve raporlama sistemi geliştirdim. 
+
+**12.06.2015 – 15.09.2015 Aydın Group Bilgi İşlem, Ankara--Stajer Bilgisayar Mühendisi**
+
+# Teknoloji ve Yazılım Beceriler
+
+**Veritabanı**                                              **:** Ms Sql Server, Postgre Sql
+
+**Yazılım Geliştirme Araçları**                 **:** Visual Studio, Vs Code, Netbeans,  Eclipse,  Jdeveloper 
+
+**Teknolojiler ve Kütüphaneler**             **:** Asp.net, Asp.Net Mvc, Asp Web Form, Html, Bootsrap, Razor,  RestSharp, NewtonSoft, RestApi, React Js, Ant Design UI,
+
+O.R.M: Linq ve Entity Framework(Databese First,Code First), Dapper
+
+**Versiyon Kontrol Araçları                  :** Git, Tfs, Clear Case, Clear Quest, Jira, Gitlab 
+
+**Ofis ve Proje Yönetim Programları**   **:** Microsoft Office, Pom-Qm
+
+# Projeler
+
+•       **Arvento Satış Sonrası Hizmetler Randeuvu Takip&Takvim Sistemi**  
+
+Arvento teknik servislerinin,bayilerinin ve Sabancı Holding bünyesindeki Brisa’nın ve tüm Arvento müşterileri cihazlarının tekniks servis randevu sisteminin uçtan uca geliştirme sürecinde aktif rol aldım.
+
+•       **Mobil Servis Uygulaması**  
+
+Arvento teknik servislerinin ve Sabancı Holding bünyesindeki Brisa’nın Arvento cihazlarıyla ilgili montaj, arıza ve cihaz değişim işlemlerinin yönetildiği modüllerin servis katmanlarını geliştirdim. Arıza, montaj ve cihaz değişim modüllerinin altyapı ve backend geliştirme süreçlerinde aktif olarak görev almaya devam ediyorum.
+
+•       **Arvento Microsoft Dynamics Helper Projeleri**  
+
+Arvento CRM projesinde kullanılan Microsoft Dynamics’in yardımcı uygulamalarının geliştirilme süreçlerinde aktif rol almaktayım. Ödeme sistemi entegrasyonu, ek sipariş modülü, cihaz ve müşteri aktivasyonu ile fırsat modülü gibi birçok ek modülün geliştirilmesinde görev alıyorum.
+
+•       **Arvento Portal Uygulaması**
+
+Arvento teknik servisleri ve bayileri tarafından kullanılan Arvento portal projesinin geliştirilmesi ve gerekli iç  ve dış entegrasyonların sağlanması konularında çalışmaktayım. 
+
+•       **Sisoft Hastane Bilgi Yönetim Sistemi (HBYS)**  
+
+Sisoft Sağlık Bilgi Sistemleri’nin geliştirmiş olduğu HBYS projesinde var olan hataların giderilmesi, gerekli iyileştirmelerin yapılması ve projeye yeni kabiliyetlerin eklenmesini sağladım. Hastanelerde kullanılacak ek modüller ve raporlama ekranları geliştirdim. 
+
+•       **İş Stok Personel Takip Sistemi**  
+
+Firma bünyesinde kullanılmak üzere iş, stok ve personel takip uygulamaları geliştirip gerekli iş analizlerinin yapılması ve firma bünyesinde bulunan şantiyelere ait iş takip sisteminin geliştirilmesinde rol aldım 
+
+•       **Sosyal Güvenlik Kurumu – BTGM Eğitim Planlama Raporlama Uygulaması**  
+
+Sosyal Güvenlik Kurumu Bilgi Teknolojileri Genel Müdürlüğü bünyesinde kullanılmak üzere kurum içi eğitimlerin planlanıp raporlanabileceği bir uygulamanın veritabanı tasarımını, web ve masaüstü platformlarda çalışacak şekilde uygulamanın geliştirilmesini sağladım. 
+
+# Eğitimler Sertifikalar ve Belgeler
+
+**10.06.2024                                    :** Profelis PostgreSQL  Sistem Yöneticisi Eğitimi (2 Hafta)
+
+**10.06.2024                                    :** Profelis PostgreSQL Temelleri Eğitimi(3 Hafta)
+
+**15.10.2023                                    :** Hacettepe Üniversitesi Yabancı Diller Y.O - Genel İngilizce Eğitim Devam Ediyor
+
+**10.08.2023                                    :** Selsoft Yazılım Geliştirme Danışmanlık - Clean Code  Eğitimi
+
+**16.03.2023                                    :** Fatih Çakıroğlu  Asp Net Core Web/Apı + Çok Katmanlı Mimari Best Practices.
+
+**05.11.2023                                    :** Fatih Çakıroğlu .Net ile Microservices Design Pattern .
+
+**04.11.2023                                    :** Asp Net Core + Rabbit Mq ve Redis Temel Eğitim.
+
+**30.09.2022**                                  **:** Udemy React Js Dersleri.
+
+**08.03.2018**                                  **:** Bilgeadam Akademi .Net Yazılım Uzmanlığı Eğitimi(520 saat) 
+
+**30.12.2018                                  :** Bilgeadam Akademi .Net Core Eğitimi
+
+**25.11.2018                                  :** Bilkent Üniversitesi - Siber Güvenlik Konferansı.
+
+**30.06.2018                                  :** ATO – Akıllı Bina Teknoloji Sistemleri. 
+
+**10.05.2018                                  :** Bilgeadam Akademi .Net Ms Sql Eğitimleri.
+
+**30.04.2018                                  :** Sakarya Üniversitesi - Octopod & Crm Geliştirme     Eğitimleri.
+
+**Sakarya Üniversitesi 2018**       **:** Sakarya Üniversitesi Mühendislik Fakültesi Onur Belgesi. **Akademik Yılı**  
+
+  <https://github.com/BarisAvtan>
+
+  <https://www.linkedin.com/in/barisdoganavtan>
