@@ -1,16 +1,85 @@
 ---
-title: "Çalışma 1"
+--- title: "NullPointer Bros Grubu MUY660 Ödev 1 " ---
 ---
 
-\
-(Aşağıdakiler örnek olarak verilmiştir.)
+Bu çalışmada 5 görevimiz var. Bu görevler, GitHub Classroom reposundaki web sitemizin takım arkadaşlarımızın yer alacağı şekilde ayarlanması. Takım Üyeleri sayfasında takım üyelerinin özgeçmişlerinin güncellenmesi ve Özgeçmişlerin PDF eklenmesi istenmiştir. Bu görevlere ait yapılan geliştirmelere web sayfamız üzerinden erişebilirsiniz.
 
-Bu çalışmada 3 görevimiz var. Bu görevler..... Bunlara sırayla aşağıda cevap arıyoruz.
+Varsayılan web sayfamızda yer alan "Portfolyo" menüsü üzerinden Ödev-1 kapsamında gerçekleştirilen diğer üç görevimizi gözlemleyebilirsiniz.
 
-## (a)
+## (3-A) **Veri Bilimi ve Endüstri Mühendisliği Üzerine Sohbetler - Mustafa Baydoğan & Erdi Daşdemir-Özet**
+
+Mustafa Gökçe Baydoğan, Boğaziçi Üniversitesi’nde öğretim görevlisi olarak çalışmakta ve Algopoly adlı veri analitiği alanında uzmanlaşmış şirketin kurucusudur. Akademik kariyerinde veri analitiği dersleri vermekte ve enerji ile lojistik sektörlerine danışmanlık sağlamaktadır. Optimizasyon problemleri üzerine çalışmalar yürütmekte, karşılaştığı problemlere matematiksel modelleme ve simülasyon yöntemleriyle çözümler geliştirmektedir. Deterministik yaklaşımlarla çözülemeyen problemlerde, olasılıksal ve stokastik modelleme yöntemlerine başvurmaktadır. Teknolojinin ilerlemesiyle birlikte, büyük veri analizleri ve veri madenciliği teknikleriyle problemlere daha etkili çözümler üretmek mümkün hale gelmiştir. Veri analizi süreçlerinde makine öğrenmesi teknikleri giderek daha fazla kullanılmaktadır. İşletmelerde öncelikle sorunlar tespit edilmekte, bu sorunların nedenleri incelenmekte ve ilgili veriler toplanmaktadır. Ardından, alternatif çözüm yöntemleri ve olası sonuçları belirlenerek problemlere yönelik metotlar geliştirilmektedir.
+
+Gelecekte kaç simit satılacağı veya hangi mağazada hangi ürünün ne kadar stoklanması gerektiği gibi sorunlar, tahminleme ve optimizasyon teknikleri kullanılarak çözülebilmektedir. Veriyi yalnızca bir sayı veya metin olarak değerlendirmek, çözüm üretme sürecinde kısıtlayıcı olabilir. Örneğin, Mustafa Gökçe Baydoğan’ın bir çalışmasında, kerestelerin kurutma sürecinde eğilme sorununu önlemek amacıyla, kurutma öncesi çekilen dijital fotoğraflar analiz edilmiştir. Bu süreçte, ahşap bilgisi ve ormancılık alanında detaylı araştırmalar yaparak verilerin doğru yorumlanması sağlanmıştır. Genel olarak, veri analizinde en önemli adımlardan biri, veriyi anlamlandırmak, analizleri açıklayarak yorumlamak ve sonuçları görselleştirmektir. Verilerin doğru anlaşılabilmesi için özniteliklerine ayrılması oldukça kritik bir süreçtir. Eğer veriler satır-sütun formatına uygun değilse (örneğin, görüntü, ses veya video verileri gibi), yapısal olmayan veriler olarak kabul edilmektedir. Derin öğrenme algoritmaları, yapısal olmayan verilerden anlamlı sonuçlar çıkararak öznitelikleri otomatik olarak belirleyebilir. Metin verileri üzerinde derin öğrenme yöntemleri kullanılarak analizler yapılabilir ve bu süreçte öznitelik mühendisliği ihtiyacı en aza indirilebilir.
+
+Ancak, veri analizleri sonucunda ortaya çıkan bulguların açıklanması da büyük önem taşımaktadır ve derin öğrenme modelleri genellikle yorumlanması zor olan “kara kutu” sistemlerdir. Örneğin, bir tahmin gerçekleştirilse bile, bunu görsel analizlerle desteklemek gereklidir. Optimizasyon problemlerine dair bir diğer örnek olarak, online perakende sektöründe sıkça kullanılan sıralama algoritmaları verilebilir. Müşterilerin bıraktığı dijital ayak izleri, yorumlar ve hatta hava durumu, promosyonlar gibi ek verilerle, tüketicilere satın alma olasılığı yüksek olan ürünler sunulmaktadır. Geleneksel yöntemler ve derin öğrenme teknikleri birlikte kullanılarak, veri odaklı problemlere daha etkili çözümler üretilebilir. Bununla birlikte, hangi yöntemin hangi problemde daha verimli çalıştığını bilmek büyük önem taşımaktadır. Örneğin, elektrik piyasasında tahminleme yöntemleri önemli bir rol oynarken, sıralama algoritmalarında makine öğrenmesi tercih edilmektedir.
+
+Günümüzde hâlâ az miktarda veya eksik verilerle çalışmak ciddi bir insan kaynağı gerektirmektedir. Problemi doğru tanımlayabilmek ve sistemin işleyişini anlamak kritik adımlardır. Yapısal ve yapısal olmayan veriler için farklı yaklaşımlar geliştirmek, analiz süreçlerini daha verimli hale getirmektedir. Yapısal olmayan veriler için derin öğrenme yöntemleri oldukça etkili görünse de, hâlen bu alanda geliştirilmeye devam eden yaklaşımlar bulunmaktadır. Açık veri kaynaklarının sunduğu bilgi zenginliği, analiz süreçlerinde büyük avantaj sağlayabilir. Veri yorumlama süreci günümüzde hâlâ büyük önem taşımakta olup, karar verme süreçlerinde yapılan tahminlerin kesin doğrulukta olması beklenmemektedir. Bu nedenle, kesin tahminler yerine aralık tahminleri yapmak daha sağlıklı bir yaklaşım olabilir. Takviyeli öğrenme (reinforcement learning) yöntemleri, karar verme mekanizmalarında giderek daha fazla kullanılmaktadır. Optimizasyon problemlerinde makine öğrenmesi teknikleri üzerine araştırmalar sürdürülmektedir. Regresyon modelleri, makine öğrenmesi süreçlerinde yaygın olarak kullanılmakta ve ortalama hata ölçütü (MSE) ile tahmin performansı değerlendirilmektedir.
+
+Örneğin, günlük kargo dağıtım optimizasyonu yaparken, her gün sıfırdan bir çözüm üretmek zaman kaybına yol açabilir. Bunun yerine, geçmiş çözümlerden öğrenme süreci geliştirilerek, aynı problemlerin tekrar tekrar çözülmesine gerek kalmadan daha hızlı ve etkili sonuçlar elde edilebilir.
+
+## (3-B) MTCARS
 
 ```{r}
-1 + 1
+# mtcars veri setini görüntüleyelim
+head(mtcars)
+
+my_summary_stats <- function(vec) {
+  summary_list <- list(
+    Ortalama = mean(vec),
+    Medyan = median(vec),
+    Standart_Sapma = sd(vec),
+    Minimum = min(vec),
+    Maksimum = max(vec)
+  )
+  return(summary_list)
+}
+
+
+cat("📊 For Döngüsü ile Özet Bilgiler:\n")
+
+for (col_name in colnames(mtcars)) {
+  cat("\n➡️ ", col_name, ":\n")
+  cat("-----------------------------\n")
+  result <- my_summary_stats(mtcars[[col_name]])
+  print(result)
+}
+
+apply_result <- apply(mtcars, 2, my_summary_stats)
+apply_result
 ```
 
-## (b)
+Bu my_summary_stats fonksiyonu verilen sayısal bir vektör için temel istatistikleri (ortalama, medyan, standart sapma, minimum ve maksimum) hesaplar.
+
+For döngüsü ise `mtcars` veri setindeki her sütuna fonksiyonu uygulayarak özet bilgileri ekrana yazdırır.
+
+`apply()` fonksiyonu ile aynı işlemi daha kısa şekilde yapabiliriz.
+
+## (3-C) DSLABS
+
+```{# Paketi yükle}
+library(dslabs)
+# Veri setini yükle
+data("na_example")
+
+# Veri setini görüntüle
+head(na_example)
+
+na_sayisi <- sum(is.na(na_example))
+cat("❗ Veri setinde", na_sayisi, "adet eksik (NA) değer bulunmaktadır.\n")
+
+cleaned_data <- ifelse(is.na(na_example), 2025, na_example)
+
+na_kaldi_mi <- sum(is.na(cleaned_data)) == 0
+cat("✅ Güncellenmiş veri seti eksik değer içeriyor mu? ", !na_kaldi_mi, "\n")
+
+
+# İlk 10 gözleme bakalım
+head(cleaned_data, 10)
+
+adet_2025 <- sum(cleaned_data == 2025)
+cat("📌 Veri setinde 2025 değeri", adet_2025, "kez geçmektedir.\n")
+
+```
+
+"Eksik (NA) değerlerin toplam sayısı 145 olarak bulunmuştur. Bu değerlerin tümü 2025 sayısıyla değiştirilmiş ve güncellenmiş veri setinde artık eksik veri bulunmamaktadır. Sonuç olarak, 2025 sayısı veri setinde **145 kez** yer almaktadır."

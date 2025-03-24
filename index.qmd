@@ -1,5 +1,5 @@
 ---
-title: "Takım: XXX"
+title: "NullPointer Bros"
 sidebar: false 
 ---
 
@@ -27,6 +27,30 @@ MUY660-İş Analitiği iyileştirme çalışmaları (örnek)
 
 ## Veri Seti Hakkında Özet Bilgi
 
+-   **Veri Seti**: `mtcars` (Motor Trend Arabalar Veri Seti)
+
+-   **Gözlem Sayısı**: 32 araç
+
+-   **Özellikler**: Beygir gücü (`hp`), yakıt verimliliği (`mpg`), ağırlık (`wt`), silindir sayısı (`cyl`) gibi 11 sayısal özellik
+
+-   **Kullanım Amaçları**:
+
+    -   Fonksiyon yazarak özet istatistikler hesaplama
+
+    -   `for` döngüsü ile kolonları analiz etme
+
+    -   `apply()` fonksiyonu ile vektörel analiz
+
+    -   Araç performansı görselleştirme (hp vs. mpg)
+
 ## Sonuçlar
 
-Burada key takeways verilmelidir. En az 3 en fazla 5 madde ile çarpıcı sonuçlar sunulmalıdır.
+1-**Beygir gücü ile yakıt verimliliği** ters orantılı: Güç arttıkça verim düşüyor.
+
+`2-mpg` (yakıt verimliliği) ortalaması **20.1**, ama bazı araçlar 10’un altında. Demek ki 1970’ler çevreye pek duyarlı değilmiş
+
+3-Döngü ve `apply()` fonksiyonları ile sütun sütun istatistik çıkarabildik, R gerçekten RAKS EDİYOR.
+
+4-Veri setlerinin nasıl anlamdırılacağı sonucuna vardıldı.
+
+5-Sonuç olarak bu proje ile hem R 'a hemde analitik düşünceye dahada yakınlaştık.
