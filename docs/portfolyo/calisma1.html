@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.551">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>XX Takımı Analitik Labı - Çalışma 1</title>
+<title>NullPointer Bros Grubu MUY660 Ödev 1 – NullPointer Bros Takımı Analitik Labı</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -117,11 +117,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
     <a class="navbar-brand" href="../index.html">
-    <span class="navbar-title">XX Takımı Analitik Labı</span>
+    <span class="navbar-title">NullPointer Bros Takımı Analitik Labı</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
@@ -144,7 +144,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </li>  
 </ul>
           </div> <!-- /navcollapse -->
-          <div class="quarto-navbar-tools">
+            <div class="quarto-navbar-tools">
     <a href="https://github.com" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-github"></i></a>
   <a href="" class="quarto-color-scheme-toggle quarto-navigation-tool  px-1" onclick="window.quartoToggleColorScheme(); return false;" title="Toggle dark mode"><i class="bi"></i></a>
 </div>
@@ -152,13 +152,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </nav>
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../portfolyo/calisma1.html">Çalışma 1</a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../portfolyo/calisma1.html">NullPointer Bros Grubu MUY660 Ödev 1</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -184,7 +184,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="../portfolyo/calisma1.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text">Çalışma 1</span></a>
+ <span class="menu-text">NullPointer Bros Grubu MUY660 Ödev 1</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -199,21 +199,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#a" id="toc-a" class="nav-link active" data-scroll-target="#a">(a)</a></li>
-  <li><a href="#b" id="toc-b" class="nav-link" data-scroll-target="#b">(b)</a></li>
+  <li><a href="#a-veri-bilimi-ve-endüstri-mühendisliği-üzerine-sohbetler---mustafa-baydoğan-erdi-daşdemir-özet" id="toc-a-veri-bilimi-ve-endüstri-mühendisliği-üzerine-sohbetler---mustafa-baydoğan-erdi-daşdemir-özet" class="nav-link active" data-scroll-target="#a-veri-bilimi-ve-endüstri-mühendisliği-üzerine-sohbetler---mustafa-baydoğan-erdi-daşdemir-özet">(3-A) <strong>Veri Bilimi ve Endüstri Mühendisliği Üzerine Sohbetler - Mustafa Baydoğan &amp; Erdi Daşdemir-Özet</strong></a></li>
+  <li><a href="#b-mtcars" id="toc-b-mtcars" class="nav-link" data-scroll-target="#b-mtcars">(3-B) MTCARS</a></li>
+  <li><a href="#c-dslabs" id="toc-c-dslabs" class="nav-link" data-scroll-target="#c-dslabs">(3-C) DSLABS</a></li>
+  <li><a href="#veri-setini-yükle" id="toc-veri-setini-yükle" class="nav-link" data-scroll-target="#veri-setini-yükle">Veri setini yükle</a></li>
+  <li><a href="#veri-setini-görüntüle" id="toc-veri-setini-görüntüle" class="nav-link" data-scroll-target="#veri-setini-görüntüle">Veri setini görüntüle</a></li>
+  <li><a href="#eksik-na-değerleri-say" id="toc-eksik-na-değerleri-say" class="nav-link" data-scroll-target="#eksik-na-değerleri-say">Eksik (NA) değerleri say</a></li>
+  <li><a href="#eksik-değerleri-2025-ile-değiştir" id="toc-eksik-değerleri-2025-ile-değiştir" class="nav-link" data-scroll-target="#eksik-değerleri-2025-ile-değiştir">Eksik değerleri 2025 ile değiştir</a></li>
+  <li><a href="#eksik-değer-kalıp-kalmadığını-kontrol-et" id="toc-eksik-değer-kalıp-kalmadığını-kontrol-et" class="nav-link" data-scroll-target="#eksik-değer-kalıp-kalmadığını-kontrol-et">Eksik değer kalıp kalmadığını kontrol et</a></li>
+  <li><a href="#ilk-10-gözleme-bakalım" id="toc-ilk-10-gözleme-bakalım" class="nav-link" data-scroll-target="#ilk-10-gözleme-bakalım">İlk 10 gözleme bakalım</a></li>
+  <li><a href="#kaç-kere-geçiyor" id="toc-kaç-kere-geçiyor" class="nav-link" data-scroll-target="#kaç-kere-geçiyor">2025 kaç kere geçiyor?</a></li>
   </ul>
 </nav>
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Çalışma 1</h1>
+<h1 class="title">NullPointer Bros Grubu MUY660 Ödev 1</h1>
 </div>
 
 
@@ -230,20 +238,476 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p><br>
-(Aşağıdakiler örnek olarak verilmiştir.)</p>
-<p>Bu çalışmada 3 görevimiz var. Bu görevler….. Bunlara sırayla aşağıda cevap arıyoruz.</p>
-<section id="a" class="level2">
-<h2 class="anchored" data-anchor-id="a">(a)</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-</div>
+<p>Bu çalışmada 5 görevimiz var. Bu görevler, GitHub Classroom reposundaki web sitemizin takım arkadaşlarımızın yer alacağı şekilde ayarlanması. Takım Üyeleri sayfasında takım üyelerinin özgeçmişlerinin güncellenmesi ve Özgeçmişlerin PDF eklenmesi istenmiştir. Bu görevlere ait yapılan geliştirmelere web sayfamız üzerinden erişebilirsiniz.</p>
+<p>Varsayılan web sayfamızda yer alan “Portfolyo” menüsü üzerinden Ödev-1 kapsamında gerçekleştirilen diğer üç görevimizi gözlemleyebilirsiniz.</p>
+<section id="a-veri-bilimi-ve-endüstri-mühendisliği-üzerine-sohbetler---mustafa-baydoğan-erdi-daşdemir-özet" class="level2">
+<h2 class="anchored" data-anchor-id="a-veri-bilimi-ve-endüstri-mühendisliği-üzerine-sohbetler---mustafa-baydoğan-erdi-daşdemir-özet">(3-A) <strong>Veri Bilimi ve Endüstri Mühendisliği Üzerine Sohbetler - Mustafa Baydoğan &amp; Erdi Daşdemir-Özet</strong></h2>
+<p>Mustafa Gökçe Baydoğan, Boğaziçi Üniversitesi’nde öğretim görevlisi olarak çalışmakta ve Algopoly adlı veri analitiği alanında uzmanlaşmış şirketin kurucusudur. Akademik kariyerinde veri analitiği dersleri vermekte ve enerji ile lojistik sektörlerine danışmanlık sağlamaktadır. Optimizasyon problemleri üzerine çalışmalar yürütmekte, karşılaştığı problemlere matematiksel modelleme ve simülasyon yöntemleriyle çözümler geliştirmektedir. Deterministik yaklaşımlarla çözülemeyen problemlerde, olasılıksal ve stokastik modelleme yöntemlerine başvurmaktadır. Teknolojinin ilerlemesiyle birlikte, büyük veri analizleri ve veri madenciliği teknikleriyle problemlere daha etkili çözümler üretmek mümkün hale gelmiştir. Veri analizi süreçlerinde makine öğrenmesi teknikleri giderek daha fazla kullanılmaktadır. İşletmelerde öncelikle sorunlar tespit edilmekte, bu sorunların nedenleri incelenmekte ve ilgili veriler toplanmaktadır. Ardından, alternatif çözüm yöntemleri ve olası sonuçları belirlenerek problemlere yönelik metotlar geliştirilmektedir.</p>
+<p>Gelecekte kaç simit satılacağı veya hangi mağazada hangi ürünün ne kadar stoklanması gerektiği gibi sorunlar, tahminleme ve optimizasyon teknikleri kullanılarak çözülebilmektedir. Veriyi yalnızca bir sayı veya metin olarak değerlendirmek, çözüm üretme sürecinde kısıtlayıcı olabilir. Örneğin, Mustafa Gökçe Baydoğan’ın bir çalışmasında, kerestelerin kurutma sürecinde eğilme sorununu önlemek amacıyla, kurutma öncesi çekilen dijital fotoğraflar analiz edilmiştir. Bu süreçte, ahşap bilgisi ve ormancılık alanında detaylı araştırmalar yaparak verilerin doğru yorumlanması sağlanmıştır. Genel olarak, veri analizinde en önemli adımlardan biri, veriyi anlamlandırmak, analizleri açıklayarak yorumlamak ve sonuçları görselleştirmektir. Verilerin doğru anlaşılabilmesi için özniteliklerine ayrılması oldukça kritik bir süreçtir. Eğer veriler satır-sütun formatına uygun değilse (örneğin, görüntü, ses veya video verileri gibi), yapısal olmayan veriler olarak kabul edilmektedir. Derin öğrenme algoritmaları, yapısal olmayan verilerden anlamlı sonuçlar çıkararak öznitelikleri otomatik olarak belirleyebilir. Metin verileri üzerinde derin öğrenme yöntemleri kullanılarak analizler yapılabilir ve bu süreçte öznitelik mühendisliği ihtiyacı en aza indirilebilir.</p>
+<p>Ancak, veri analizleri sonucunda ortaya çıkan bulguların açıklanması da büyük önem taşımaktadır ve derin öğrenme modelleri genellikle yorumlanması zor olan “kara kutu” sistemlerdir. Örneğin, bir tahmin gerçekleştirilse bile, bunu görsel analizlerle desteklemek gereklidir. Optimizasyon problemlerine dair bir diğer örnek olarak, online perakende sektöründe sıkça kullanılan sıralama algoritmaları verilebilir. Müşterilerin bıraktığı dijital ayak izleri, yorumlar ve hatta hava durumu, promosyonlar gibi ek verilerle, tüketicilere satın alma olasılığı yüksek olan ürünler sunulmaktadır. Geleneksel yöntemler ve derin öğrenme teknikleri birlikte kullanılarak, veri odaklı problemlere daha etkili çözümler üretilebilir. Bununla birlikte, hangi yöntemin hangi problemde daha verimli çalıştığını bilmek büyük önem taşımaktadır. Örneğin, elektrik piyasasında tahminleme yöntemleri önemli bir rol oynarken, sıralama algoritmalarında makine öğrenmesi tercih edilmektedir.</p>
+<p>Günümüzde hâlâ az miktarda veya eksik verilerle çalışmak ciddi bir insan kaynağı gerektirmektedir. Problemi doğru tanımlayabilmek ve sistemin işleyişini anlamak kritik adımlardır. Yapısal ve yapısal olmayan veriler için farklı yaklaşımlar geliştirmek, analiz süreçlerini daha verimli hale getirmektedir. Yapısal olmayan veriler için derin öğrenme yöntemleri oldukça etkili görünse de, hâlen bu alanda geliştirilmeye devam eden yaklaşımlar bulunmaktadır. Açık veri kaynaklarının sunduğu bilgi zenginliği, analiz süreçlerinde büyük avantaj sağlayabilir. Veri yorumlama süreci günümüzde hâlâ büyük önem taşımakta olup, karar verme süreçlerinde yapılan tahminlerin kesin doğrulukta olması beklenmemektedir. Bu nedenle, kesin tahminler yerine aralık tahminleri yapmak daha sağlıklı bir yaklaşım olabilir. Takviyeli öğrenme (reinforcement learning) yöntemleri, karar verme mekanizmalarında giderek daha fazla kullanılmaktadır. Optimizasyon problemlerinde makine öğrenmesi teknikleri üzerine araştırmalar sürdürülmektedir. Regresyon modelleri, makine öğrenmesi süreçlerinde yaygın olarak kullanılmakta ve ortalama hata ölçütü (MSE) ile tahmin performansı değerlendirilmektedir.</p>
+<p>Örneğin, günlük kargo dağıtım optimizasyonu yaparken, her gün sıfırdan bir çözüm üretmek zaman kaybına yol açabilir. Bunun yerine, geçmiş çözümlerden öğrenme süreci geliştirilerek, aynı problemlerin tekrar tekrar çözülmesine gerek kalmadan daha hızlı ve etkili sonuçlar elde edilebilir.</p>
 </section>
-<section id="b" class="level2">
-<h2 class="anchored" data-anchor-id="b">(b)</h2>
+<section id="b-mtcars" class="level2">
+<h2 class="anchored" data-anchor-id="b-mtcars">(3-B) MTCARS</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># mtcars veri setini görüntüleyelim</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mtcars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                   mpg cyl disp  hp drat    wt  qsec vs am gear carb
+Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>my_summary_stats <span class="ot">&lt;-</span> <span class="cf">function</span>(vec) {</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  summary_list <span class="ot">&lt;-</span> <span class="fu">list</span>(</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">Ortalama =</span> <span class="fu">mean</span>(vec),</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">Medyan =</span> <span class="fu">median</span>(vec),</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">Standart_Sapma =</span> <span class="fu">sd</span>(vec),</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">Minimum =</span> <span class="fu">min</span>(vec),</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">Maksimum =</span> <span class="fu">max</span>(vec)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">return</span>(summary_list)</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"For Döngüsü ile Özet Bilgiler:</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>For Döngüsü ile Özet Bilgiler:</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> (col_name <span class="cf">in</span> <span class="fu">colnames</span>(mtcars)) {</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"</span><span class="sc">\n</span><span class="st"> "</span>, col_name, <span class="st">":</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">cat</span>(<span class="st">"-----------------------------</span><span class="sc">\n</span><span class="st">"</span>)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  result <span class="ot">&lt;-</span> <span class="fu">my_summary_stats</span>(mtcars[[col_name]])</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">print</span>(result)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+  mpg :
+-----------------------------
+$Ortalama
+[1] 20.09062
+
+$Medyan
+[1] 19.2
+
+$Standart_Sapma
+[1] 6.026948
+
+$Minimum
+[1] 10.4
+
+$Maksimum
+[1] 33.9
+
+
+  cyl :
+-----------------------------
+$Ortalama
+[1] 6.1875
+
+$Medyan
+[1] 6
+
+$Standart_Sapma
+[1] 1.785922
+
+$Minimum
+[1] 4
+
+$Maksimum
+[1] 8
+
+
+  disp :
+-----------------------------
+$Ortalama
+[1] 230.7219
+
+$Medyan
+[1] 196.3
+
+$Standart_Sapma
+[1] 123.9387
+
+$Minimum
+[1] 71.1
+
+$Maksimum
+[1] 472
+
+
+  hp :
+-----------------------------
+$Ortalama
+[1] 146.6875
+
+$Medyan
+[1] 123
+
+$Standart_Sapma
+[1] 68.56287
+
+$Minimum
+[1] 52
+
+$Maksimum
+[1] 335
+
+
+  drat :
+-----------------------------
+$Ortalama
+[1] 3.596563
+
+$Medyan
+[1] 3.695
+
+$Standart_Sapma
+[1] 0.5346787
+
+$Minimum
+[1] 2.76
+
+$Maksimum
+[1] 4.93
+
+
+  wt :
+-----------------------------
+$Ortalama
+[1] 3.21725
+
+$Medyan
+[1] 3.325
+
+$Standart_Sapma
+[1] 0.9784574
+
+$Minimum
+[1] 1.513
+
+$Maksimum
+[1] 5.424
+
+
+  qsec :
+-----------------------------
+$Ortalama
+[1] 17.84875
+
+$Medyan
+[1] 17.71
+
+$Standart_Sapma
+[1] 1.786943
+
+$Minimum
+[1] 14.5
+
+$Maksimum
+[1] 22.9
+
+
+  vs :
+-----------------------------
+$Ortalama
+[1] 0.4375
+
+$Medyan
+[1] 0
+
+$Standart_Sapma
+[1] 0.5040161
+
+$Minimum
+[1] 0
+
+$Maksimum
+[1] 1
+
+
+  am :
+-----------------------------
+$Ortalama
+[1] 0.40625
+
+$Medyan
+[1] 0
+
+$Standart_Sapma
+[1] 0.4989909
+
+$Minimum
+[1] 0
+
+$Maksimum
+[1] 1
+
+
+  gear :
+-----------------------------
+$Ortalama
+[1] 3.6875
+
+$Medyan
+[1] 4
+
+$Standart_Sapma
+[1] 0.7378041
+
+$Minimum
+[1] 3
+
+$Maksimum
+[1] 5
+
+
+  carb :
+-----------------------------
+$Ortalama
+[1] 2.8125
+
+$Medyan
+[1] 2
+
+$Standart_Sapma
+[1] 1.6152
+
+$Minimum
+[1] 1
+
+$Maksimum
+[1] 8</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>apply_result <span class="ot">&lt;-</span> <span class="fu">apply</span>(mtcars, <span class="dv">2</span>, my_summary_stats)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>apply_result</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>$mpg
+$mpg$Ortalama
+[1] 20.09062
+
+$mpg$Medyan
+[1] 19.2
+
+$mpg$Standart_Sapma
+[1] 6.026948
+
+$mpg$Minimum
+[1] 10.4
+
+$mpg$Maksimum
+[1] 33.9
+
+
+$cyl
+$cyl$Ortalama
+[1] 6.1875
+
+$cyl$Medyan
+[1] 6
+
+$cyl$Standart_Sapma
+[1] 1.785922
+
+$cyl$Minimum
+[1] 4
+
+$cyl$Maksimum
+[1] 8
+
+
+$disp
+$disp$Ortalama
+[1] 230.7219
+
+$disp$Medyan
+[1] 196.3
+
+$disp$Standart_Sapma
+[1] 123.9387
+
+$disp$Minimum
+[1] 71.1
+
+$disp$Maksimum
+[1] 472
+
+
+$hp
+$hp$Ortalama
+[1] 146.6875
+
+$hp$Medyan
+[1] 123
+
+$hp$Standart_Sapma
+[1] 68.56287
+
+$hp$Minimum
+[1] 52
+
+$hp$Maksimum
+[1] 335
+
+
+$drat
+$drat$Ortalama
+[1] 3.596563
+
+$drat$Medyan
+[1] 3.695
+
+$drat$Standart_Sapma
+[1] 0.5346787
+
+$drat$Minimum
+[1] 2.76
+
+$drat$Maksimum
+[1] 4.93
+
+
+$wt
+$wt$Ortalama
+[1] 3.21725
+
+$wt$Medyan
+[1] 3.325
+
+$wt$Standart_Sapma
+[1] 0.9784574
+
+$wt$Minimum
+[1] 1.513
+
+$wt$Maksimum
+[1] 5.424
+
+
+$qsec
+$qsec$Ortalama
+[1] 17.84875
+
+$qsec$Medyan
+[1] 17.71
+
+$qsec$Standart_Sapma
+[1] 1.786943
+
+$qsec$Minimum
+[1] 14.5
+
+$qsec$Maksimum
+[1] 22.9
+
+
+$vs
+$vs$Ortalama
+[1] 0.4375
+
+$vs$Medyan
+[1] 0
+
+$vs$Standart_Sapma
+[1] 0.5040161
+
+$vs$Minimum
+[1] 0
+
+$vs$Maksimum
+[1] 1
+
+
+$am
+$am$Ortalama
+[1] 0.40625
+
+$am$Medyan
+[1] 0
+
+$am$Standart_Sapma
+[1] 0.4989909
+
+$am$Minimum
+[1] 0
+
+$am$Maksimum
+[1] 1
+
+
+$gear
+$gear$Ortalama
+[1] 3.6875
+
+$gear$Medyan
+[1] 4
+
+$gear$Standart_Sapma
+[1] 0.7378041
+
+$gear$Minimum
+[1] 3
+
+$gear$Maksimum
+[1] 5
+
+
+$carb
+$carb$Ortalama
+[1] 2.8125
+
+$carb$Medyan
+[1] 2
+
+$carb$Standart_Sapma
+[1] 1.6152
+
+$carb$Minimum
+[1] 1
+
+$carb$Maksimum
+[1] 8</code></pre>
+</div>
+</div>
+<p>Bu my_summary_stats fonksiyonu verilen sayısal bir vektör için temel istatistikleri (ortalama, medyan, standart sapma, minimum ve maksimum) hesaplar.</p>
+<p>For döngüsü ise <code>mtcars</code> veri setindeki her sütuna fonksiyonu uygulayarak özet bilgileri ekrana yazdırır.</p>
+<p><code>apply()</code> fonksiyonu ile aynı işlemi daha kısa şekilde yapabiliriz.</p>
+</section>
+<section id="c-dslabs" class="level2">
+<h2 class="anchored" data-anchor-id="c-dslabs">(3-C) DSLABS</h2>
+<p>```{r} # Paketi yükle library(dslabs)</p>
+</section>
+<section id="veri-setini-yükle" class="level1">
+<h1>Veri setini yükle</h1>
+<p>data(“na_example”)</p>
+</section>
+<section id="veri-setini-görüntüle" class="level1">
+<h1>Veri setini görüntüle</h1>
+<p>head(na_example)</p>
+</section>
+<section id="eksik-na-değerleri-say" class="level1">
+<h1>Eksik (NA) değerleri say</h1>
+<p>na_sayisi &lt;- sum(is.na(na_example)) cat(“Veri setinde”, na_sayisi, “adet eksik (NA) değer bulunmaktadır.”)</p>
+</section>
+<section id="eksik-değerleri-2025-ile-değiştir" class="level1">
+<h1>Eksik değerleri 2025 ile değiştir</h1>
+<p>cleaned_data &lt;- ifelse(is.na(na_example), 2025, na_example)</p>
+</section>
+<section id="eksik-değer-kalıp-kalmadığını-kontrol-et" class="level1">
+<h1>Eksik değer kalıp kalmadığını kontrol et</h1>
+<p>na_kaldi_mi &lt;- sum(is.na(cleaned_data)) == 0 cat(“Güncellenmiş veri seti eksik değer içeriyor mu?”, !na_kaldi_mi, “”)</p>
+</section>
+<section id="ilk-10-gözleme-bakalım" class="level1">
+<h1>İlk 10 gözleme bakalım</h1>
+<p>head(cleaned_data, 10)</p>
+</section>
+<section id="kaç-kere-geçiyor" class="level1">
+<h1>2025 kaç kere geçiyor?</h1>
+<p>adet_2025 &lt;- sum(cleaned_data == 2025) cat(” Veri setinde 2025 değeri”, adet_2025, “kez geçmektedir.”)</p>
 
 
 </section>
@@ -428,18 +892,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -471,7 +924,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -479,7 +954,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

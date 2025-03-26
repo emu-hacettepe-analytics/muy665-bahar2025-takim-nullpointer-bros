@@ -1,5 +1,5 @@
 ---
-title: "Proje X (proje adını yazınız)"
+title: "NullPointer Bros Grubu"
 number-sections: true
 ---
 

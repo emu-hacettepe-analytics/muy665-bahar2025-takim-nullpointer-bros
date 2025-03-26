@@ -2,7 +2,7 @@
 title: "Uğur TOPAK"
 ---
 
-![](/assets/images/ugur_topak.jpg){fig-align="center"}
+![](/assets/images/ugur_topak.jpg){fig-align="center" width="201"}
 
 # Eğitim Bilgileri
 
@@ -10,40 +10,37 @@ title: "Uğur TOPAK"
 
 •       Pamukkale Üniversitesi-Mühendislik Fakültesi - Bilgisayar Mühendisliği 
 
-# İş – Staj Deyimleri
+# İş Deyimleri
 
-**01.02.2023  BİTES Savunma, Ankara – Proje Yöneticisi**  
+**BİTES Savunma, Ankara – Proje Yöneticisi**  
 
 İş Tanımı: MSB, SSB, ASELSAN, ROKETSAN, TUSAŞ ile yürütülen projelerin yönetilmesi, Bütçe planlama ve takibinin yapılması, Proje başlangıç, planlama, yürütme, izleme, kontrol ve kapanış süreçlerinin yönetilmesi, Yapay Zeka projeleri ile ilgili POC çalışmalarının yapılması ve literatür araştırmalarına katılım, Yapay zeka ekiplerinin koordine edilmesi, Paydaş yönetiminin yapılması, Proje takviminin ve proje metriklerinin hazırlanması ve takip edilmesi (MS Project), Analiz ve dokümantasyon faaliyetlerinin (CMMI) yapılması ve koordinasyonunun sağlanması, Proje gereksinimlerine ve bütçesine uygun ekip oluşturulması, Toplantı, raporlama, sunum ve müşteri ziyaretlerinin yapılması/organizasyonu, Teknik ve idari şartnamelerin hazırlanması, sözleşme görüşmelerinin yapılması, Teklif hazırlama, adamxay çalışmaları, maliyet ve bütçe yönetiminin yapılması, İş geliştirme faaliyetlerine destek verilmesi, PMI standartlarında Agile proje yönetim faaliyetlerinin gerçekleştirilmesi
 
 Teknolojiler :  MS Project, MS Office, JİRA, Trello, Visual Studio, C++, C#, Unity, Python
 
-**19.01.2019 – 31.01.2023 FORTE Savunma, Ankara - Proje Yöneticisi**  
+**FORTE Savunma, Ankara - Proje Yöneticisi**  
 
 İş Tanımı: MSB, SSB, Kara Kuvvetleri, Deniz Kuvvetleri, Hava Kuvvetleri, HAVELSAN ile yürütülen projelerin yönetilmesi, PMI standartlarında Agile proje yönetim faaliyetlerinin gerçekleştirilmesi, SCRUM faaliyetlerinin uygulanması (Sprint Planlama, Daily Meeting, Sprint Review, Retrospektif planlama), Proje başlangıç, planlama, yürütme, izleme, kontrol ve kapanış süreçlerinin yönetilmesi, Görev planlanma, atama ve takibinin (Azure Devops, Sharepoint) yapılması, Analiz, tasarım, geliştirme, test ve kabul faaliyetlerinin planlanması ve koordinasyonunun yapılması, Dokümantasyon faaliyetlerinin yapılması ve koordinasyonunun sağlanması, CMMI süreçlerinin uygulanması, DEVOPS süreçlerinin yönetilmesi, Paydaş Yönetiminin yapılması, Teknik ve idari şartnamelerin hazırlanması, sözleşme görüşmelerinin yapılması, Teklif hazırlama, adamxay çalışmaları, maliyet ve bütçe yönetiminin yapılması, Sunum, raporlama ve müşteri yönetiminin yapılması, Kullanıcı eğitimlerinin verilmesi, İş geliştirme faaliyetlerine destek verilmesi
 
 Teknolojiler: MS Office, MS Project, MS Visio, Balsamiq, Azure, DEVOPS, Phyton, C#, .Net Core, Asp.Net MVC, Oracle, PostgreSQL,Docker, RabbitMQ, Hangfire, React, JQuery, Active Directory,Devexpress
 
-**TARİH  ANTE Grup Bilişim A.Ş., Ankara - Lider Yazılım Mühendisi**  
+**ANTE Grup Bilişim A.Ş., Ankara - Lider Yazılım Mühendisi**  
 
 İş Tanımı: HAVELSAN bünyesinde, Kara Kuvvetleri Komutanlığı’nın LBSYBS projesinde analiz, kodlama, hata çözümü, geliştirme ve code review faaliyetlerinin gerçekleştirilmesi, Kodlama, hata çözümü ve geliştirme faaliyetlerinin yapılması, SCRUM faaliyetlerinin uygulanması, E-İmza ve Kayıtlı Elektronik Posta (KEP) ürünlerinin .Net ve Java ortamlarında geliştirilmesi, DEVOPS faaliyetlerinin gerçekleştirilmesi
 
 Teknolojiler: .Net Core, Java, Asp.Net MVC, MS SQL,JQuery, Git
 
-
-**TARİH  Infopark & Türk Standartları Enstitüsü, Ankara - Pozisyon**  
+**Infopark & Türk Standartları Enstitüsü, Ankara - Pozisyon**  
 
 İş Tanımı: Efatura, BelgeNet, AsansorNet, CodeEscrow gibi projelerde analiz, tasarım, kodlama, hata çözümü, geliştirme, raporlama ve code review faaliyetlerinin gerçekleştirilmesi, DEVOPS süreçlerinin uygulanması, İş dağıtımının ve iş takibinin (TFS, Sharepoint) yapılması, SCRUM kurallarının uygulanması
 
 Teknolojiler: C# , Asp.Net MVC, Sharepoint, Entity,Framework, WCF, Jquery, MS SQL, Visual Studio, TFS, Xamarin Form,Stored Procedure,Triger, Function, Katmanlı mimari
 
-**TARİH  İnnova Bilişim A.Ş., Ankara - Yazılım Mühendisi**  
+**İnnova Bilişim A.Ş., Ankara - Yazılım Mühendisi**  
 
 İş Tanımı: Kodlama, hata çözümü ve geliştirme, Doküman ve Arşiv Yönetim Sistemi projesinde analiz, tasarım, kodlama, hata çözümü, geliştirme, devreye alma ve bakım faaliyetlerinin gerçekleştirilmesi (Sanayi Bakanlığı, EÜAŞ, Enerji Bakanlığı, Türk Telekom), Veri aktarım çalışmaları (ORACLE’dan MS SQL’e), ISO 27001 sertifikasyon süreçlerinde teknik hazırlıkların yapılması
 
 Teknolojiler: C# , Asp.Net, Ext Js, Nhibernate, MS SQL, Oracle, Skelta BPM, WCF, TFS
-
-
 
 # Teknoloji ve Yazılım Beceriler
 

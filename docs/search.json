@@ -2,7 +2,7 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Takım: XXX",
+    "title": "NullPointer Bros",
     "section": "",
     "text": "MUY660-İş Analitiği dersi takım sayfamıza hoş geldiniz.\nBu analitik çalışmalarımızı paylaşıyoruz.\nLütfen faaliyetlerimizi görmek için için bizi takipte kalın."
   },
@@ -192,37 +192,37 @@
   {
     "objectID": "index.html#proje-adı",
     "href": "index.html#proje-adı",
-    "title": "Takım: XXX",
+    "title": "NullPointer Bros",
     "section": "Proje Adı",
     "text": "Proje Adı\nMUY660-İş Analitiği iyileştirme çalışmaları (örnek)"
   },
   {
     "objectID": "index.html#proje-konusu",
     "href": "index.html#proje-konusu",
-    "title": "Takım: XXX",
+    "title": "NullPointer Bros",
     "section": "Proje Konusu",
     "text": "Proje Konusu\nÖrnek: Bu projede MUY660-İş Analitiği ders içeriğinin analitik yaklaşımlarla iyileştirilmesini hedefledik. Bu doğrultuda tüm üniversitelerdeki benzer derslerin verisini toplayarak bir veri seti oluşturduk Analiz için …….. yöntemleri kullanarak, ……. çalışmaları yaptık Sonuç olarak, MUY660-İş Analitiği dersinin dünyadaki tüm derslerden daha iyi olduğunu ve bu dersi aldığımız için çok mutlu olduğumuzu tespit ettik."
   },
   {
     "objectID": "index.html#veri-seti-hakkında-özet-bilgi",
     "href": "index.html#veri-seti-hakkında-özet-bilgi",
-    "title": "Takım: XXX",
+    "title": "NullPointer Bros",
     "section": "Veri Seti Hakkında Özet Bilgi",
-    "text": "Veri Seti Hakkında Özet Bilgi"
+    "text": "Veri Seti Hakkında Özet Bilgi\n\nVeri Seti: mtcars (Motor Trend Arabalar Veri Seti)\nGözlem Sayısı: 32 araç\nÖzellikler: Beygir gücü (hp), yakıt verimliliği (mpg), ağırlık (wt), silindir sayısı (cyl) gibi 11 sayısal özellik\nKullanım Amaçları:\n\nFonksiyon yazarak özet istatistikler hesaplama\nfor döngüsü ile kolonları analiz etme\napply() fonksiyonu ile vektörel analiz\nAraç performansı görselleştirme (hp vs. mpg)"
   },
   {
     "objectID": "index.html#sonuçlar",
     "href": "index.html#sonuçlar",
-    "title": "Takım: XXX",
+    "title": "NullPointer Bros",
     "section": "Sonuçlar",
-    "text": "Sonuçlar\nBurada key takeways verilmelidir. En az 3 en fazla 5 madde ile çarpıcı sonuçlar sunulmalıdır."
+    "text": "Sonuçlar\n1-Beygir gücü ile yakıt verimliliği ters orantılı: Güç arttıkça verim düşüyor.\n2-mpg (yakıt verimliliği) ortalaması 20.1, ama bazı araçlar 10’un altında. Demek ki 1970’ler çevreye pek duyarlı değilmiş\n3-Döngü ve apply() fonksiyonları ile sütun sütun istatistik çıkarabildik, R gerçekten RAKS EDİYOR.\n4-Veri setlerinin nasıl anlamdırılacağı sonucuna vardıldı.\n5-Sonuç olarak bu proje ile hem R ’a hemde analitik düşünceye dahada yakınlaştık."
   },
   {
     "objectID": "index.html#takım-üyeleri",
     "href": "index.html#takım-üyeleri",
-    "title": "Takım: XXX",
+    "title": "NullPointer Bros",
     "section": "Takım Üyeleri",
-    "text": "Takım Üyeleri\n\nEdin_Džeko\nDušan Tadić\nFrederico Rodrigues de Paula Santos\nSebastian Szymański"
+    "text": "Takım Üyeleri\n\nBarış Doğan AVTAN\nUğur Topak\nMehmet Akın"
   },
   {
     "objectID": "portfolyo.html",
@@ -238,17 +238,18 @@
   {
     "objectID": "takim.html",
     "href": "takim.html",
-    "title": "Takım Üyeleri",
+    "title": "NullPointer Bros Grubu",
     "section": "",
-    "text": "Takım Üyelerimizin detaylı özgemişlerinin yer aldığı kişisel sayfalarına gitmek için sol menüyü veya aşağıdaki linkleri kullanabilirsiniz.\n\nTakım Üyeleri\n\nEdin_Džeko\nDušan Tadić\nFrederico Rodrigues de Paula Santos\nSebastian Szymański\n\n\n\n\n\n Back to top",
+    "text": "Takım Üyelerimizin detaylı özgemişlerinin yer aldığı kişisel sayfalarına gitmek için sol menüyü veya aşağıdaki linkleri kullanabilirsiniz.\n\nTakım Üyeleri\n\nBarış Doğan Avtan\nUğur Topak\nMehmet Akın\n\n\n\n\n\n Back to top",
     "crumbs": [
-      "Takım Üyeleri"
+      "Takım Üyeleri",
+      "NullPointer Bros Grubu"
     ]
   },
   {
     "objectID": "proje.html",
     "href": "proje.html",
-    "title": "Proje X (proje adını yazınız)",
+    "title": "NullPointer Bros Grubu",
     "section": "",
     "text": "Proje sayfamıza hoş geldiniz.\nProjemizle ilgili güncellemelerden haberdar olmak için bu alanı takip edin.\n(Aşağıdaki başlıklar örnek olarak verilmiştir; lütfen gerektiği şekilde düzenlemekten çekinmeyin.)"
   },
@@ -322,67 +323,67 @@
   {
     "objectID": "portfolyo/calisma1.html",
     "href": "portfolyo/calisma1.html",
-    "title": "Çalışma 1",
+    "title": "NullPointer Bros Grubu MUY660 Ödev 1",
     "section": "",
-    "text": "(Aşağıdakiler örnek olarak verilmiştir.)\nBu çalışmada 3 görevimiz var. Bu görevler….. Bunlara sırayla aşağıda cevap arıyoruz.",
+    "text": "Bu çalışmada 5 görevimiz var. Bu görevler, GitHub Classroom reposundaki web sitemizin takım arkadaşlarımızın yer alacağı şekilde ayarlanması. Takım Üyeleri sayfasında takım üyelerinin özgeçmişlerinin güncellenmesi ve Özgeçmişlerin PDF eklenmesi istenmiştir. Bu görevlere ait yapılan geliştirmelere web sayfamız üzerinden erişebilirsiniz.\nVarsayılan web sayfamızda yer alan “Portfolyo” menüsü üzerinden Ödev-1 kapsamında gerçekleştirilen diğer üç görevimizi gözlemleyebilirsiniz.",
     "crumbs": [
       "Porfolyo",
-      "Çalışma 1"
+      "NullPointer Bros Grubu MUY660 Ödev 1"
     ]
   },
   {
     "objectID": "proje.html#veri-kaynağı",
     "href": "proje.html#veri-kaynağı",
-    "title": "Proje X (proje adını yazınız)",
+    "title": "NullPointer Bros Grubu",
     "section": "2.1 Veri Kaynağı",
     "text": "2.1 Veri Kaynağı\nxxxxxx"
   },
   {
     "objectID": "proje.html#veri-hakkında-genel-bilgiler",
     "href": "proje.html#veri-hakkında-genel-bilgiler",
-    "title": "Proje X (proje adını yazınız)",
+    "title": "NullPointer Bros Grubu",
     "section": "2.2 Veri Hakkında Genel Bilgiler",
     "text": "2.2 Veri Hakkında Genel Bilgiler\nxxxxxx"
   },
   {
     "objectID": "proje.html#tercih-sebebi",
     "href": "proje.html#tercih-sebebi",
-    "title": "Proje X (proje adını yazınız)",
+    "title": "NullPointer Bros Grubu",
     "section": "2.3 Tercih Sebebi",
     "text": "2.3 Tercih Sebebi\nxxxxxx"
   },
   {
     "objectID": "proje.html#ön-işleme",
     "href": "proje.html#ön-işleme",
-    "title": "Proje X (proje adını yazınız)",
+    "title": "NullPointer Bros Grubu",
     "section": "2.4 Ön İşleme",
     "text": "2.4 Ön İşleme\nxxxxxx"
   },
   {
     "objectID": "proje.html#keşifsel-veri-analizi",
     "href": "proje.html#keşifsel-veri-analizi",
-    "title": "Proje X (proje adını yazınız)",
+    "title": "NullPointer Bros Grubu",
     "section": "3.1 Keşifsel Veri Analizi",
     "text": "3.1 Keşifsel Veri Analizi\nxxxxxx"
   },
   {
     "objectID": "proje.html#trend-analizi",
     "href": "proje.html#trend-analizi",
-    "title": "Proje X (proje adını yazınız)",
+    "title": "NullPointer Bros Grubu",
     "section": "3.2 Trend Analizi",
     "text": "3.2 Trend Analizi\nxxxxxx"
   },
   {
     "objectID": "proje.html#model-uydurma",
     "href": "proje.html#model-uydurma",
-    "title": "Proje X (proje adını yazınız)",
+    "title": "NullPointer Bros Grubu",
     "section": "3.3 Model Uydurma",
     "text": "3.3 Model Uydurma\nxxxxxx"
   },
   {
     "objectID": "proje.html#sonuçlar",
     "href": "proje.html#sonuçlar",
-    "title": "Proje X (proje adını yazınız)",
+    "title": "NullPointer Bros Grubu",
     "section": "3.4 Sonuçlar",
     "text": "3.4 Sonuçlar\nxxxxxx"
   },
@@ -549,6 +550,146 @@
     "crumbs": [
       "Takım Üyeleri",
       "Dusan Tadic"
+    ]
+  },
+  {
+    "objectID": "portfolyo/calisma1.html#a-veri-bilimi-ve-endüstri-mühendisliği-üzerine-sohbetler---mustafa-baydoğan-erdi-daşdemir-özet",
+    "href": "portfolyo/calisma1.html#a-veri-bilimi-ve-endüstri-mühendisliği-üzerine-sohbetler---mustafa-baydoğan-erdi-daşdemir-özet",
+    "title": "NullPointer Bros Grubu MUY660 Ödev 1",
+    "section": "(3-A) Veri Bilimi ve Endüstri Mühendisliği Üzerine Sohbetler - Mustafa Baydoğan & Erdi Daşdemir-Özet",
+    "text": "(3-A) Veri Bilimi ve Endüstri Mühendisliği Üzerine Sohbetler - Mustafa Baydoğan & Erdi Daşdemir-Özet\nMustafa Gökçe Baydoğan, Boğaziçi Üniversitesi’nde öğretim görevlisi olarak çalışmakta ve Algopoly adlı veri analitiği alanında uzmanlaşmış şirketin kurucusudur. Akademik kariyerinde veri analitiği dersleri vermekte ve enerji ile lojistik sektörlerine danışmanlık sağlamaktadır. Optimizasyon problemleri üzerine çalışmalar yürütmekte, karşılaştığı problemlere matematiksel modelleme ve simülasyon yöntemleriyle çözümler geliştirmektedir. Deterministik yaklaşımlarla çözülemeyen problemlerde, olasılıksal ve stokastik modelleme yöntemlerine başvurmaktadır. Teknolojinin ilerlemesiyle birlikte, büyük veri analizleri ve veri madenciliği teknikleriyle problemlere daha etkili çözümler üretmek mümkün hale gelmiştir. Veri analizi süreçlerinde makine öğrenmesi teknikleri giderek daha fazla kullanılmaktadır. İşletmelerde öncelikle sorunlar tespit edilmekte, bu sorunların nedenleri incelenmekte ve ilgili veriler toplanmaktadır. Ardından, alternatif çözüm yöntemleri ve olası sonuçları belirlenerek problemlere yönelik metotlar geliştirilmektedir.\nGelecekte kaç simit satılacağı veya hangi mağazada hangi ürünün ne kadar stoklanması gerektiği gibi sorunlar, tahminleme ve optimizasyon teknikleri kullanılarak çözülebilmektedir. Veriyi yalnızca bir sayı veya metin olarak değerlendirmek, çözüm üretme sürecinde kısıtlayıcı olabilir. Örneğin, Mustafa Gökçe Baydoğan’ın bir çalışmasında, kerestelerin kurutma sürecinde eğilme sorununu önlemek amacıyla, kurutma öncesi çekilen dijital fotoğraflar analiz edilmiştir. Bu süreçte, ahşap bilgisi ve ormancılık alanında detaylı araştırmalar yaparak verilerin doğru yorumlanması sağlanmıştır. Genel olarak, veri analizinde en önemli adımlardan biri, veriyi anlamlandırmak, analizleri açıklayarak yorumlamak ve sonuçları görselleştirmektir. Verilerin doğru anlaşılabilmesi için özniteliklerine ayrılması oldukça kritik bir süreçtir. Eğer veriler satır-sütun formatına uygun değilse (örneğin, görüntü, ses veya video verileri gibi), yapısal olmayan veriler olarak kabul edilmektedir. Derin öğrenme algoritmaları, yapısal olmayan verilerden anlamlı sonuçlar çıkararak öznitelikleri otomatik olarak belirleyebilir. Metin verileri üzerinde derin öğrenme yöntemleri kullanılarak analizler yapılabilir ve bu süreçte öznitelik mühendisliği ihtiyacı en aza indirilebilir.\nAncak, veri analizleri sonucunda ortaya çıkan bulguların açıklanması da büyük önem taşımaktadır ve derin öğrenme modelleri genellikle yorumlanması zor olan “kara kutu” sistemlerdir. Örneğin, bir tahmin gerçekleştirilse bile, bunu görsel analizlerle desteklemek gereklidir. Optimizasyon problemlerine dair bir diğer örnek olarak, online perakende sektöründe sıkça kullanılan sıralama algoritmaları verilebilir. Müşterilerin bıraktığı dijital ayak izleri, yorumlar ve hatta hava durumu, promosyonlar gibi ek verilerle, tüketicilere satın alma olasılığı yüksek olan ürünler sunulmaktadır. Geleneksel yöntemler ve derin öğrenme teknikleri birlikte kullanılarak, veri odaklı problemlere daha etkili çözümler üretilebilir. Bununla birlikte, hangi yöntemin hangi problemde daha verimli çalıştığını bilmek büyük önem taşımaktadır. Örneğin, elektrik piyasasında tahminleme yöntemleri önemli bir rol oynarken, sıralama algoritmalarında makine öğrenmesi tercih edilmektedir.\nGünümüzde hâlâ az miktarda veya eksik verilerle çalışmak ciddi bir insan kaynağı gerektirmektedir. Problemi doğru tanımlayabilmek ve sistemin işleyişini anlamak kritik adımlardır. Yapısal ve yapısal olmayan veriler için farklı yaklaşımlar geliştirmek, analiz süreçlerini daha verimli hale getirmektedir. Yapısal olmayan veriler için derin öğrenme yöntemleri oldukça etkili görünse de, hâlen bu alanda geliştirilmeye devam eden yaklaşımlar bulunmaktadır. Açık veri kaynaklarının sunduğu bilgi zenginliği, analiz süreçlerinde büyük avantaj sağlayabilir. Veri yorumlama süreci günümüzde hâlâ büyük önem taşımakta olup, karar verme süreçlerinde yapılan tahminlerin kesin doğrulukta olması beklenmemektedir. Bu nedenle, kesin tahminler yerine aralık tahminleri yapmak daha sağlıklı bir yaklaşım olabilir. Takviyeli öğrenme (reinforcement learning) yöntemleri, karar verme mekanizmalarında giderek daha fazla kullanılmaktadır. Optimizasyon problemlerinde makine öğrenmesi teknikleri üzerine araştırmalar sürdürülmektedir. Regresyon modelleri, makine öğrenmesi süreçlerinde yaygın olarak kullanılmakta ve ortalama hata ölçütü (MSE) ile tahmin performansı değerlendirilmektedir.\nÖrneğin, günlük kargo dağıtım optimizasyonu yaparken, her gün sıfırdan bir çözüm üretmek zaman kaybına yol açabilir. Bunun yerine, geçmiş çözümlerden öğrenme süreci geliştirilerek, aynı problemlerin tekrar tekrar çözülmesine gerek kalmadan daha hızlı ve etkili sonuçlar elde edilebilir.",
+    "crumbs": [
+      "Porfolyo",
+      "NullPointer Bros Grubu MUY660 Ödev 1"
+    ]
+  },
+  {
+    "objectID": "portfolyo/calisma1.html#b-mtcars",
+    "href": "portfolyo/calisma1.html#b-mtcars",
+    "title": "NullPointer Bros Grubu MUY660 Ödev 1",
+    "section": "(3-B) MTCARS",
+    "text": "(3-B) MTCARS\n\n# mtcars veri setini görüntüleyelim\nhead(mtcars)\n\n                   mpg cyl disp  hp drat    wt  qsec vs am gear carb\nMazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1\nHornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1\nHornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2\nValiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1\n\nmy_summary_stats &lt;- function(vec) {\n  summary_list &lt;- list(\n    Ortalama = mean(vec),\n    Medyan = median(vec),\n    Standart_Sapma = sd(vec),\n    Minimum = min(vec),\n    Maksimum = max(vec)\n  )\n  return(summary_list)\n}\n\n\ncat(\"For Döngüsü ile Özet Bilgiler:\\n\")\n\nFor Döngüsü ile Özet Bilgiler:\n\nfor (col_name in colnames(mtcars)) {\n  cat(\"\\n \", col_name, \":\\n\")\n  cat(\"-----------------------------\\n\")\n  result &lt;- my_summary_stats(mtcars[[col_name]])\n  print(result)\n}\n\n\n  mpg :\n-----------------------------\n$Ortalama\n[1] 20.09062\n\n$Medyan\n[1] 19.2\n\n$Standart_Sapma\n[1] 6.026948\n\n$Minimum\n[1] 10.4\n\n$Maksimum\n[1] 33.9\n\n\n  cyl :\n-----------------------------\n$Ortalama\n[1] 6.1875\n\n$Medyan\n[1] 6\n\n$Standart_Sapma\n[1] 1.785922\n\n$Minimum\n[1] 4\n\n$Maksimum\n[1] 8\n\n\n  disp :\n-----------------------------\n$Ortalama\n[1] 230.7219\n\n$Medyan\n[1] 196.3\n\n$Standart_Sapma\n[1] 123.9387\n\n$Minimum\n[1] 71.1\n\n$Maksimum\n[1] 472\n\n\n  hp :\n-----------------------------\n$Ortalama\n[1] 146.6875\n\n$Medyan\n[1] 123\n\n$Standart_Sapma\n[1] 68.56287\n\n$Minimum\n[1] 52\n\n$Maksimum\n[1] 335\n\n\n  drat :\n-----------------------------\n$Ortalama\n[1] 3.596563\n\n$Medyan\n[1] 3.695\n\n$Standart_Sapma\n[1] 0.5346787\n\n$Minimum\n[1] 2.76\n\n$Maksimum\n[1] 4.93\n\n\n  wt :\n-----------------------------\n$Ortalama\n[1] 3.21725\n\n$Medyan\n[1] 3.325\n\n$Standart_Sapma\n[1] 0.9784574\n\n$Minimum\n[1] 1.513\n\n$Maksimum\n[1] 5.424\n\n\n  qsec :\n-----------------------------\n$Ortalama\n[1] 17.84875\n\n$Medyan\n[1] 17.71\n\n$Standart_Sapma\n[1] 1.786943\n\n$Minimum\n[1] 14.5\n\n$Maksimum\n[1] 22.9\n\n\n  vs :\n-----------------------------\n$Ortalama\n[1] 0.4375\n\n$Medyan\n[1] 0\n\n$Standart_Sapma\n[1] 0.5040161\n\n$Minimum\n[1] 0\n\n$Maksimum\n[1] 1\n\n\n  am :\n-----------------------------\n$Ortalama\n[1] 0.40625\n\n$Medyan\n[1] 0\n\n$Standart_Sapma\n[1] 0.4989909\n\n$Minimum\n[1] 0\n\n$Maksimum\n[1] 1\n\n\n  gear :\n-----------------------------\n$Ortalama\n[1] 3.6875\n\n$Medyan\n[1] 4\n\n$Standart_Sapma\n[1] 0.7378041\n\n$Minimum\n[1] 3\n\n$Maksimum\n[1] 5\n\n\n  carb :\n-----------------------------\n$Ortalama\n[1] 2.8125\n\n$Medyan\n[1] 2\n\n$Standart_Sapma\n[1] 1.6152\n\n$Minimum\n[1] 1\n\n$Maksimum\n[1] 8\n\napply_result &lt;- apply(mtcars, 2, my_summary_stats)\napply_result\n\n$mpg\n$mpg$Ortalama\n[1] 20.09062\n\n$mpg$Medyan\n[1] 19.2\n\n$mpg$Standart_Sapma\n[1] 6.026948\n\n$mpg$Minimum\n[1] 10.4\n\n$mpg$Maksimum\n[1] 33.9\n\n\n$cyl\n$cyl$Ortalama\n[1] 6.1875\n\n$cyl$Medyan\n[1] 6\n\n$cyl$Standart_Sapma\n[1] 1.785922\n\n$cyl$Minimum\n[1] 4\n\n$cyl$Maksimum\n[1] 8\n\n\n$disp\n$disp$Ortalama\n[1] 230.7219\n\n$disp$Medyan\n[1] 196.3\n\n$disp$Standart_Sapma\n[1] 123.9387\n\n$disp$Minimum\n[1] 71.1\n\n$disp$Maksimum\n[1] 472\n\n\n$hp\n$hp$Ortalama\n[1] 146.6875\n\n$hp$Medyan\n[1] 123\n\n$hp$Standart_Sapma\n[1] 68.56287\n\n$hp$Minimum\n[1] 52\n\n$hp$Maksimum\n[1] 335\n\n\n$drat\n$drat$Ortalama\n[1] 3.596563\n\n$drat$Medyan\n[1] 3.695\n\n$drat$Standart_Sapma\n[1] 0.5346787\n\n$drat$Minimum\n[1] 2.76\n\n$drat$Maksimum\n[1] 4.93\n\n\n$wt\n$wt$Ortalama\n[1] 3.21725\n\n$wt$Medyan\n[1] 3.325\n\n$wt$Standart_Sapma\n[1] 0.9784574\n\n$wt$Minimum\n[1] 1.513\n\n$wt$Maksimum\n[1] 5.424\n\n\n$qsec\n$qsec$Ortalama\n[1] 17.84875\n\n$qsec$Medyan\n[1] 17.71\n\n$qsec$Standart_Sapma\n[1] 1.786943\n\n$qsec$Minimum\n[1] 14.5\n\n$qsec$Maksimum\n[1] 22.9\n\n\n$vs\n$vs$Ortalama\n[1] 0.4375\n\n$vs$Medyan\n[1] 0\n\n$vs$Standart_Sapma\n[1] 0.5040161\n\n$vs$Minimum\n[1] 0\n\n$vs$Maksimum\n[1] 1\n\n\n$am\n$am$Ortalama\n[1] 0.40625\n\n$am$Medyan\n[1] 0\n\n$am$Standart_Sapma\n[1] 0.4989909\n\n$am$Minimum\n[1] 0\n\n$am$Maksimum\n[1] 1\n\n\n$gear\n$gear$Ortalama\n[1] 3.6875\n\n$gear$Medyan\n[1] 4\n\n$gear$Standart_Sapma\n[1] 0.7378041\n\n$gear$Minimum\n[1] 3\n\n$gear$Maksimum\n[1] 5\n\n\n$carb\n$carb$Ortalama\n[1] 2.8125\n\n$carb$Medyan\n[1] 2\n\n$carb$Standart_Sapma\n[1] 1.6152\n\n$carb$Minimum\n[1] 1\n\n$carb$Maksimum\n[1] 8\n\n\nBu my_summary_stats fonksiyonu verilen sayısal bir vektör için temel istatistikleri (ortalama, medyan, standart sapma, minimum ve maksimum) hesaplar.\nFor döngüsü ise mtcars veri setindeki her sütuna fonksiyonu uygulayarak özet bilgileri ekrana yazdırır.\napply() fonksiyonu ile aynı işlemi daha kısa şekilde yapabiliriz.",
+    "crumbs": [
+      "Porfolyo",
+      "NullPointer Bros Grubu MUY660 Ödev 1"
+    ]
+  },
+  {
+    "objectID": "portfolyo/calisma1.html#c-dslabs",
+    "href": "portfolyo/calisma1.html#c-dslabs",
+    "title": "NullPointer Bros Grubu MUY660 Ödev 1",
+    "section": "(3-C) DSLABS",
+    "text": "(3-C) DSLABS\n```{r} # Paketi yükle library(dslabs)",
+    "crumbs": [
+      "Porfolyo",
+      "NullPointer Bros Grubu MUY660 Ödev 1"
+    ]
+  },
+  {
+    "objectID": "takim/mehmetakin.html#işler",
+    "href": "takim/mehmetakin.html#işler",
+    "title": "Sebastian Szymański",
+    "section": "İşler",
+    "text": "İşler\n\nFirma xxx, pozisyon xx, yıl xxx\nFirma yyy, pozisyon yyy, yıl yyy",
+    "crumbs": [
+      "Takım Üyeleri",
+      "Sebastian Szymański"
+    ]
+  },
+  {
+    "objectID": "takim/mehmetakin.html#stajlar",
+    "href": "takim/mehmetakin.html#stajlar",
+    "title": "Sebastian Szymański",
+    "section": "Stajlar",
+    "text": "Stajlar\n\nFirma aaa, pozisyon xx, yıl xxx\nFirma bbb, pozisyon yyy, yıl yyy",
+    "crumbs": [
+      "Takım Üyeleri",
+      "Sebastian Szymański"
+    ]
+  },
+  {
+    "objectID": "docs/project.html",
+    "href": "docs/project.html",
+    "title": "Project X",
+    "section": "",
+    "text": "Welcome to my project page.\nKeep an eye on this space to stay updated with my project activities.\n(The titles below are provided as examples; please feel free to adjust them as necessary.)"
+  },
+  {
+    "objectID": "docs/project.html#data-source",
+    "href": "docs/project.html#data-source",
+    "title": "Project X",
+    "section": "2.1 Data Source",
+    "text": "2.1 Data Source\nxxxxxx"
+  },
+  {
+    "objectID": "docs/project.html#general-information-about-data",
+    "href": "docs/project.html#general-information-about-data",
+    "title": "Project X",
+    "section": "2.2 General Information About Data",
+    "text": "2.2 General Information About Data\nxxxxxx"
+  },
+  {
+    "objectID": "docs/project.html#reason-of-choice",
+    "href": "docs/project.html#reason-of-choice",
+    "title": "Project X",
+    "section": "2.3 Reason of Choice",
+    "text": "2.3 Reason of Choice\nxxxxxx"
+  },
+  {
+    "objectID": "docs/project.html#preprocessing",
+    "href": "docs/project.html#preprocessing",
+    "title": "Project X",
+    "section": "2.4 Preprocessing",
+    "text": "2.4 Preprocessing\nxxxxxx"
+  },
+  {
+    "objectID": "docs/project.html#exploratory-data-analysis",
+    "href": "docs/project.html#exploratory-data-analysis",
+    "title": "Project X",
+    "section": "3.1 Exploratory Data Analysis",
+    "text": "3.1 Exploratory Data Analysis\nxxxxxx"
+  },
+  {
+    "objectID": "docs/project.html#trend-analysis",
+    "href": "docs/project.html#trend-analysis",
+    "title": "Project X",
+    "section": "3.2 Trend Analysis",
+    "text": "3.2 Trend Analysis\nxxxxxx"
+  },
+  {
+    "objectID": "docs/project.html#model-fitting",
+    "href": "docs/project.html#model-fitting",
+    "title": "Project X",
+    "section": "3.3 Model Fitting",
+    "text": "3.3 Model Fitting\nxxxxxx"
+  },
+  {
+    "objectID": "docs/project.html#results",
+    "href": "docs/project.html#results",
+    "title": "Project X",
+    "section": "3.4 Results",
+    "text": "3.4 Results\nxxxxxx"
+  },
+  {
+    "objectID": "takim/barisdoganavtan.html",
+    "href": "takim/barisdoganavtan.html",
+    "title": "Barış Doğan AVTAN",
+    "section": "",
+    "text": "Eğitim Bilgileri\n•       Hacettepe Üniversitesi – Mühendislik Yönetimi – Yüksek Lisans(Devem Ediyor.)\n•       Sakarya Üniversitesi-Mühendislik Fakültesi - Bilgisayar Mühendisliği \n•       Ankara-Ulus Anadolu Teknik Lisesi – Sayısal - Elektronik Bölümü\n\n\nİş – Staj Deyimleri\n19.10.2020  Arvento Mobile Systems, Ankara – Kıdemli Bilgisayar Mühendisi  \nİş Tanımı: Arvento bünyesinde geliştirilen CRM projesinin geliştirilmesi, iç ve dış entegrasyonların sağlanması, Arvento mobil teknik servis uygulamasında kullanılacak servislerin geliştirilmesi süreçlerinde aktif rol alıyorum. Ayrıca, CRM portal, CRM Dynamics Helper modüllerinin geliştirilmesi, sisteme yeni modüllerin eklenmesi ve sistem ihtiyaçları doğrultusunda yeni altyapı ile mikroservislerin oluşturulması aşamalarında görev alıyorum.\nTeknolojiler :  C#, .NetCore, .Net Mvc, .Net Web Form, .Net Windows Form, React JS\n17.12.2018 – 02.02.2020 Sisoft Sağlık Bilgi Sistemleri, Ankara-Yazılım Geliştirici  \nİş Tanımı: Hastane bilgi yönetim sistemi projesinde sisteme yeni kabiliyetlerin eklenmesinde hataların\ndüzeltilmesinde ve Sağlık Bakanlığı ve hastanelerde kullanılacak gerekli web raporlama ekranlarının yapım aşamasında rol aldım. \n15.04.2017 – 17.12.2018 Remote Yazılım Projesi- Bilgisayar Mühendisi\nİş Tanımı: Firma bünyesinde kullanılmak üzere sıfırdan iş, stok ve personel takip uygulamasının proje gereksinimlerinin çıkarılması,geliştirilmesi, kordinasyonu ve projenin yönetilmesini sağladım.\n14.08.2017 – 14.10.2017 Sosyal Güvenlik Kurumu – Bilgi Teknolojileri Genel Müdürlüğü/Ankara-Stajer Bilgisayar Mühendisi  \nİş Tanımı: Kurum içinde kullanılmak üzere eğitim planlama ve raporlama sistemi geliştirdim. \n12.06.2015 – 15.09.2015 Aydın Group Bilgi İşlem, Ankara–Stajer Bilgisayar Mühendisi\n\n\nTeknoloji ve Yazılım Beceriler\nVeritabanı                                              : Ms Sql Server, Postgre Sql\nYazılım Geliştirme Araçları                 : Visual Studio, Vs Code, Netbeans,  Eclipse,  Jdeveloper \nTeknolojiler ve Kütüphaneler             : Asp.net, Asp.Net Mvc, Asp Web Form, Html, Bootsrap, Razor,  RestSharp, NewtonSoft, RestApi, React Js, Ant Design UI,\nO.R.M: Linq ve Entity Framework(Databese First,Code First), Dapper\nVersiyon Kontrol Araçları                  : Git, Tfs, Clear Case, Clear Quest, Jira, Gitlab \nOfis ve Proje Yönetim Programları   : Microsoft Office, Pom-Qm\n\n\nProjeler\n•       Arvento Satış Sonrası Hizmetler Randeuvu Takip&Takvim Sistemi  \nArvento teknik servislerinin,bayilerinin ve Sabancı Holding bünyesindeki Brisa’nın ve tüm Arvento müşterileri cihazlarının tekniks servis randevu sisteminin uçtan uca geliştirme sürecinde aktif rol aldım.\n•       Mobil Servis Uygulaması  \nArvento teknik servislerinin ve Sabancı Holding bünyesindeki Brisa’nın Arvento cihazlarıyla ilgili montaj, arıza ve cihaz değişim işlemlerinin yönetildiği modüllerin servis katmanlarını geliştirdim. Arıza, montaj ve cihaz değişim modüllerinin altyapı ve backend geliştirme süreçlerinde aktif olarak görev almaya devam ediyorum.\n•       Arvento Microsoft Dynamics Helper Projeleri  \nArvento CRM projesinde kullanılan Microsoft Dynamics’in yardımcı uygulamalarının geliştirilme süreçlerinde aktif rol almaktayım. Ödeme sistemi entegrasyonu, ek sipariş modülü, cihaz ve müşteri aktivasyonu ile fırsat modülü gibi birçok ek modülün geliştirilmesinde görev alıyorum.\n•       Arvento Portal Uygulaması\nArvento teknik servisleri ve bayileri tarafından kullanılan Arvento portal projesinin geliştirilmesi ve gerekli iç  ve dış entegrasyonların sağlanması konularında çalışmaktayım. \n•       Sisoft Hastane Bilgi Yönetim Sistemi (HBYS)  \nSisoft Sağlık Bilgi Sistemleri’nin geliştirmiş olduğu HBYS projesinde var olan hataların giderilmesi, gerekli iyileştirmelerin yapılması ve projeye yeni kabiliyetlerin eklenmesini sağladım. Hastanelerde kullanılacak ek modüller ve raporlama ekranları geliştirdim. \n•       İş Stok Personel Takip Sistemi  \nFirma bünyesinde kullanılmak üzere iş, stok ve personel takip uygulamaları geliştirip gerekli iş analizlerinin yapılması ve firma bünyesinde bulunan şantiyelere ait iş takip sisteminin geliştirilmesinde rol aldım \n•       Sosyal Güvenlik Kurumu – BTGM Eğitim Planlama Raporlama Uygulaması  \nSosyal Güvenlik Kurumu Bilgi Teknolojileri Genel Müdürlüğü bünyesinde kullanılmak üzere kurum içi eğitimlerin planlanıp raporlanabileceği bir uygulamanın veritabanı tasarımını, web ve masaüstü platformlarda çalışacak şekilde uygulamanın geliştirilmesini sağladım. \n\n\nEğitimler Sertifikalar ve Belgeler\n10.06.2024                                    : Profelis PostgreSQL  Sistem Yöneticisi Eğitimi (2 Hafta)\n10.06.2024                                    : Profelis PostgreSQL Temelleri Eğitimi(3 Hafta)\n15.10.2023                                    : Hacettepe Üniversitesi Yabancı Diller Y.O - Genel İngilizce Eğitim Devam Ediyor\n10.08.2023                                    : Selsoft Yazılım Geliştirme Danışmanlık - Clean Code  Eğitimi\n16.03.2023                                    : Fatih Çakıroğlu  Asp Net Core Web/Apı + Çok Katmanlı Mimari Best Practices.\n05.11.2023                                    : Fatih Çakıroğlu .Net ile Microservices Design Pattern .\n04.11.2023                                    : Asp Net Core + Rabbit Mq ve Redis Temel Eğitim.\n30.09.2022                                  : Udemy React Js Dersleri.\n08.03.2018                                  : Bilgeadam Akademi .Net Yazılım Uzmanlığı Eğitimi(520 saat) \n30.12.2018                                  : Bilgeadam Akademi .Net Core Eğitimi\n25.11.2018                                  : Bilkent Üniversitesi - Siber Güvenlik Konferansı.\n30.06.2018                                  : ATO – Akıllı Bina Teknoloji Sistemleri. \n10.05.2018                                  : Bilgeadam Akademi .Net Ms Sql Eğitimleri.\n30.04.2018                                  : Sakarya Üniversitesi - Octopod & Crm Geliştirme     Eğitimleri.\nSakarya Üniversitesi 2018       : Sakarya Üniversitesi Mühendislik Fakültesi Onur Belgesi. Akademik Yılı  \n  https://github.com/BarisAvtan\n  https://www.linkedin.com/in/barisdoganavtan\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Takım Üyeleri",
+      "Barış Doğan AVTAN"
+    ]
+  },
+  {
+    "objectID": "takim/ugurtopak.html",
+    "href": "takim/ugurtopak.html",
+    "title": "Uğur TOPAK",
+    "section": "",
+    "text": "Eğitim Bilgileri\n•       Hacettepe Üniversitesi – Mühendislik Yönetimi – Yüksek Lisans(Devem Ediyor.)\n•       Pamukkale Üniversitesi-Mühendislik Fakültesi - Bilgisayar Mühendisliği \n\n\nİş Deyimleri\nBİTES Savunma, Ankara – Proje Yöneticisi  \nİş Tanımı: MSB, SSB, ASELSAN, ROKETSAN, TUSAŞ ile yürütülen projelerin yönetilmesi, Bütçe planlama ve takibinin yapılması, Proje başlangıç, planlama, yürütme, izleme, kontrol ve kapanış süreçlerinin yönetilmesi, Yapay Zeka projeleri ile ilgili POC çalışmalarının yapılması ve literatür araştırmalarına katılım, Yapay zeka ekiplerinin koordine edilmesi, Paydaş yönetiminin yapılması, Proje takviminin ve proje metriklerinin hazırlanması ve takip edilmesi (MS Project), Analiz ve dokümantasyon faaliyetlerinin (CMMI) yapılması ve koordinasyonunun sağlanması, Proje gereksinimlerine ve bütçesine uygun ekip oluşturulması, Toplantı, raporlama, sunum ve müşteri ziyaretlerinin yapılması/organizasyonu, Teknik ve idari şartnamelerin hazırlanması, sözleşme görüşmelerinin yapılması, Teklif hazırlama, adamxay çalışmaları, maliyet ve bütçe yönetiminin yapılması, İş geliştirme faaliyetlerine destek verilmesi, PMI standartlarında Agile proje yönetim faaliyetlerinin gerçekleştirilmesi\nTeknolojiler :  MS Project, MS Office, JİRA, Trello, Visual Studio, C++, C#, Unity, Python\nFORTE Savunma, Ankara - Proje Yöneticisi  \nİş Tanımı: MSB, SSB, Kara Kuvvetleri, Deniz Kuvvetleri, Hava Kuvvetleri, HAVELSAN ile yürütülen projelerin yönetilmesi, PMI standartlarında Agile proje yönetim faaliyetlerinin gerçekleştirilmesi, SCRUM faaliyetlerinin uygulanması (Sprint Planlama, Daily Meeting, Sprint Review, Retrospektif planlama), Proje başlangıç, planlama, yürütme, izleme, kontrol ve kapanış süreçlerinin yönetilmesi, Görev planlanma, atama ve takibinin (Azure Devops, Sharepoint) yapılması, Analiz, tasarım, geliştirme, test ve kabul faaliyetlerinin planlanması ve koordinasyonunun yapılması, Dokümantasyon faaliyetlerinin yapılması ve koordinasyonunun sağlanması, CMMI süreçlerinin uygulanması, DEVOPS süreçlerinin yönetilmesi, Paydaş Yönetiminin yapılması, Teknik ve idari şartnamelerin hazırlanması, sözleşme görüşmelerinin yapılması, Teklif hazırlama, adamxay çalışmaları, maliyet ve bütçe yönetiminin yapılması, Sunum, raporlama ve müşteri yönetiminin yapılması, Kullanıcı eğitimlerinin verilmesi, İş geliştirme faaliyetlerine destek verilmesi\nTeknolojiler: MS Office, MS Project, MS Visio, Balsamiq, Azure, DEVOPS, Phyton, C#, .Net Core, Asp.Net MVC, Oracle, PostgreSQL,Docker, RabbitMQ, Hangfire, React, JQuery, Active Directory,Devexpress\nANTE Grup Bilişim A.Ş., Ankara - Lider Yazılım Mühendisi  \nİş Tanımı: HAVELSAN bünyesinde, Kara Kuvvetleri Komutanlığı’nın LBSYBS projesinde analiz, kodlama, hata çözümü, geliştirme ve code review faaliyetlerinin gerçekleştirilmesi, Kodlama, hata çözümü ve geliştirme faaliyetlerinin yapılması, SCRUM faaliyetlerinin uygulanması, E-İmza ve Kayıtlı Elektronik Posta (KEP) ürünlerinin .Net ve Java ortamlarında geliştirilmesi, DEVOPS faaliyetlerinin gerçekleştirilmesi\nTeknolojiler: .Net Core, Java, Asp.Net MVC, MS SQL,JQuery, Git\nInfopark & Türk Standartları Enstitüsü, Ankara - Pozisyon  \nİş Tanımı: Efatura, BelgeNet, AsansorNet, CodeEscrow gibi projelerde analiz, tasarım, kodlama, hata çözümü, geliştirme, raporlama ve code review faaliyetlerinin gerçekleştirilmesi, DEVOPS süreçlerinin uygulanması, İş dağıtımının ve iş takibinin (TFS, Sharepoint) yapılması, SCRUM kurallarının uygulanması\nTeknolojiler: C# , Asp.Net MVC, Sharepoint, Entity,Framework, WCF, Jquery, MS SQL, Visual Studio, TFS, Xamarin Form,Stored Procedure,Triger, Function, Katmanlı mimari\nİnnova Bilişim A.Ş., Ankara - Yazılım Mühendisi  \nİş Tanımı: Kodlama, hata çözümü ve geliştirme, Doküman ve Arşiv Yönetim Sistemi projesinde analiz, tasarım, kodlama, hata çözümü, geliştirme, devreye alma ve bakım faaliyetlerinin gerçekleştirilmesi (Sanayi Bakanlığı, EÜAŞ, Enerji Bakanlığı, Türk Telekom), Veri aktarım çalışmaları (ORACLE’dan MS SQL’e), ISO 27001 sertifikasyon süreçlerinde teknik hazırlıkların yapılması\nTeknolojiler: C# , Asp.Net, Ext Js, Nhibernate, MS SQL, Oracle, Skelta BPM, WCF, TFS\n\n\nTeknoloji ve Yazılım Beceriler\nVeritabanı                                              : Ms Sql Server, Postgre Sql\nYazılım Geliştirme Araçları                 : Visual Studio, Vs Code, Netbeans,  Eclipse,  Jdeveloper \nTeknolojiler ve Kütüphaneler             : Asp.net, Asp.Net Mvc, Asp Web Form, Html, Bootsrap, Razor,  RestSharp, NewtonSoft, RestApi, React Js, Ant Design UI,\nO.R.M: Linq ve Entity Framework(Databese First,Code First), Dapper\nVersiyon Kontrol Araçları                  : Git, Tfs, Clear Case, Clear Quest, Jira, Gitlab \nOfis ve Proje Yönetim Programları   : Microsoft Office, Pom-Qm\n\n\nProjeler\n•       ALTAY Tankı Tank Mürettebat Eğitim Simülatörü  \n•       IFF Simülatörü  \n•       Atış Eğitim Merkezi Simülatörü  \n•       Lojistik Bilgi Sistemi\n•       Kara Kuvvetleri Komutanlığı Dijital Dönüşüm Projeleri  \n  https://github.com/ugrtpk\n  https://www.linkedin.com/in/u%C4%9Fur-topak-41b8a118/\n\n\n\n\n Back to top",
+    "crumbs": [
+      "Takım Üyeleri",
+      "Uğur TOPAK"
     ]
   }
 ]

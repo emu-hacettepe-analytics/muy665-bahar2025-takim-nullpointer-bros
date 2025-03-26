@@ -1,5 +1,5 @@
 ---
---- title: "NullPointer Bros Grubu MUY660 Ödev 1 " ---
+title: "NullPointer Bros Grubu MUY660 Ödev 1"
 ---
 
 Bu çalışmada 5 görevimiz var. Bu görevler, GitHub Classroom reposundaki web sitemizin takım arkadaşlarımızın yer alacağı şekilde ayarlanması. Takım Üyeleri sayfasında takım üyelerinin özgeçmişlerinin güncellenmesi ve Özgeçmişlerin PDF eklenmesi istenmiştir. Bu görevlere ait yapılan geliştirmelere web sayfamız üzerinden erişebilirsiniz.
@@ -36,10 +36,10 @@ my_summary_stats <- function(vec) {
 }
 
 
-cat("📊 For Döngüsü ile Özet Bilgiler:\n")
+cat("For Döngüsü ile Özet Bilgiler:\n")
 
 for (col_name in colnames(mtcars)) {
-  cat("\n➡️ ", col_name, ":\n")
+  cat("\n ", col_name, ":\n")
   cat("-----------------------------\n")
   result <- my_summary_stats(mtcars[[col_name]])
   print(result)
@@ -57,29 +57,32 @@ For döngüsü ise `mtcars` veri setindeki her sütuna fonksiyonu uygulayarak ö
 
 ## (3-C) DSLABS
 
-```{# Paketi yükle}
-library(dslabs)
+\`\`\`{r} \# Paketi yükle library(dslabs)
+
 # Veri setini yükle
+
 data("na_example")
 
 # Veri setini görüntüle
+
 head(na_example)
 
-na_sayisi <- sum(is.na(na_example))
-cat("❗ Veri setinde", na_sayisi, "adet eksik (NA) değer bulunmaktadır.\n")
+# Eksik (NA) değerleri say
 
-cleaned_data <- ifelse(is.na(na_example), 2025, na_example)
+na_sayisi \<- sum(is.na(na_example)) cat("Veri setinde", na_sayisi, "adet eksik (NA) değer bulunmaktadır.\n")
 
-na_kaldi_mi <- sum(is.na(cleaned_data)) == 0
-cat("✅ Güncellenmiş veri seti eksik değer içeriyor mu? ", !na_kaldi_mi, "\n")
+# Eksik değerleri 2025 ile değiştir
 
+cleaned_data \<- ifelse(is.na(na_example), 2025, na_example)
+
+# Eksik değer kalıp kalmadığını kontrol et
+
+na_kaldi_mi \<- sum(is.na(cleaned_data)) == 0 cat("Güncellenmiş veri seti eksik değer içeriyor mu?", !na_kaldi_mi, "\n")
 
 # İlk 10 gözleme bakalım
+
 head(cleaned_data, 10)
 
-adet_2025 <- sum(cleaned_data == 2025)
-cat("📌 Veri setinde 2025 değeri", adet_2025, "kez geçmektedir.\n")
+# 2025 kaç kere geçiyor?
 
-```
-
-"Eksik (NA) değerlerin toplam sayısı 145 olarak bulunmuştur. Bu değerlerin tümü 2025 sayısıyla değiştirilmiş ve güncellenmiş veri setinde artık eksik veri bulunmamaktadır. Sonuç olarak, 2025 sayısı veri setinde **145 kez** yer almaktadır."
+adet_2025 \<- sum(cleaned_data == 2025) cat(" Veri setinde 2025 değeri", adet_2025, "kez geçmektedir.\n")
