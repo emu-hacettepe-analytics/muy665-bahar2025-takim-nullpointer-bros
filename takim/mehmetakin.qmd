@@ -14,11 +14,7 @@ title: "Mehmet AKIN"
 
 Mehmet AKIN
 
-**Mehmet AKIN**
-
 **Electronics and Communication Engineer**
-
-Date of Birth: 29.07.1989
 
 Ankara TURKEY • +905300419062 •
 mehmetakin1905\@gmail.com
@@ -94,8 +90,6 @@ RS 232, ARINC 429, ARINC 664
 **Education**
 
 B.Sc. : Electronics and Communication Engineering, Yıldız Technical University
-
-\(2013\) GPA:3.26/4
 
 **Trainings Taken**
 
