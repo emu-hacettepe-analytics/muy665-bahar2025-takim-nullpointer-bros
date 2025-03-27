@@ -1,38 +1,130 @@
 ---
-title: "Sebastian Szymański"
+title: "Mehmet AKIN"
 ---
 
-![](/assets/images/vesikalik.jpeg){fig-align="center"}
+# 
 
-# Eğitim
 
--   Lisans, ................................., .................................... Üniversitesi, Türkiye, 20xx - 20xx.
--   Yüksek Lisans, Endüstri Mühendisliği, Hacettepe Üniversitesi, Türkiye, 20xx - devam ediyor.
 
-# İş Deneyimi
 
-## İşler
 
-1.  Firma xxx, pozisyon xx, yıl xxx
 
-2.  Firma yyy, pozisyon yyy, yıl yyy
 
-## Stajlar
 
-1.  Firma aaa, pozisyon xx, yıl xxx
 
-2.  Firma bbb, pozisyon yyy, yıl yyy
+Mehmet AKIN
 
-# Projeler
+**Mehmet AKIN**
 
-1.  TÜBİTAK 1001..........................
+**Electronics and Communication Engineer**
 
-# Yayınlar
+Date of Birth: 29.07.1989
 
-1.  Dasdemir, E., Batta, R., Koksalan, M., Tezcaner Öztürk, D. (2022) “İHA Yönlendirmesi için Keşif Misyonu: Zaman Bağımlı Ödülleri ve Çoklu Bağlantıları Olan Çok Amaçlı Oryantiring Problemi”, Computers & Operations Research, 145: 105882
+Ankara TURKEY • +905300419062 •
+mehmetakin1905\@gmail.com
 
-# Yetkinlikler
+Flexible and energetic individual with knowledge of exceptional electronics engineering skills, seeking the
 
-R, Quarto, Git, Python
+position of an Electronics Engineer. Bringing the ability to design PCB, ability to apply systems engineering
 
-# Hobiler
+and ability to integrate systems, end-to-end, as well as strong analytical and excellent interpersonal skills.
+
+**Professional Experience**
+
+2014 – 2015 **Systems Engineer**
+
+HAVELSAN, Ankara,TURKEY
+
+Tasks:
+
+▪ Prepared system, subsystem level functional and physical structure
+
+▪ Determining the requirements of the Contractor/Subcontractor
+
+▪ Requirement and risk analysis
+
+2015 – Continuing **Senior Hard Design Engineer**
+
+HAVELSAN, Ankara,TURKEY
+
+Tasks:
+
+▪ PCB Design using Mentor PADS Layout, xDX Designer
+
+▪ High speed signal PCB design
+
+▪ DC-DC, AC-DC Power Design
+
+▪ Civil aviation standards: DO-254, DO-160
+
+▪ Military standards: MIL-STD-810, MIL-STD-461
+
+▪ Product Certification Personel POA Organization
+
+▪ Designing central safety system using by Siemens WinCC Scada System
+
+Projects:
+
+▪ **IFE :** In Flight Entertainment System Project for Turkish Airlines and Airbus. (2014– 2017)
+
+▪ **ATAKSIM :** Central Safety System AW129 Helicopter Full Mission Simulator
+
+Project for Turkish Naval Forces (2017-2018)
+
+▪ **Seatback IFE:** Seatback In Flight Entertainment System Project for Cornea Aero
+
+(2018-Continuing)
+
+**Technical Skills**
+
+▪ High Speed Signal PCB Design
+
+▪ Knowledge of communication bus such as Ethernet, USB, I2C, SPI, RS 422, RS 485,
+
+RS 232, ARINC 429, ARINC 664
+
+▪ Mentor PADS Layout, xDX Designer, Altium Designer, Python,C
+
+▪ MS Office (PowerPoint, Excell etc)
+
+▪ System Engineering Methodologies and Tools
+
+▪ DOORS, JIRA, SAP
+
+**Education**
+
+B.Sc. : Electronics and Communication Engineering, Yıldız Technical University
+
+\(2013\) GPA:3.26/4
+
+**Trainings Taken**
+
+▪ CCNA 1,2,3, Istanbul Technical University, Istanbul, 2012-2013 (60 days)
+
+▪ System Engineering Course, PS Contultech HDM, Ankara, 2014 (5 days)
+
+▪ EMI/EMC Standart, TUBITAK, Gebze, 2018 (3 Days)
+
+▪ Military MIL-STD-461E/F Standart, TUBITAK, Gebze, 2018 (2 Days)
+
+▪ Developing with Embedded Linux and and Fundamentals, By Simon Goda (Doulos),
+
+Ankara, 2018 (5 Days)
+
+▪ DO-254 Training, By Ates Berna (ElectraIC), Ankara, 2020
+
+▪ ARINC- 664 Training, AIM GMBH, Freiburg, 2018 (3 days)
+
+▪ 6 / 2017 Information Security Training. (From My Company Instructor)
+
+**Foreign Languages**
+
+▪ English (Good in Reading, Writing and Speaking)
+
+▪ Turkish (Native**)**
+
+**Other**
+
+▪ Driving License (B)
+
+▪ Done Military Service
