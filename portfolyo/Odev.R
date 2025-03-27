@@ -14,7 +14,7 @@ my_summary_stats <- function(vec) {
 }
 
 # Fonksiyonu Döngü Kullanarak Uygulama
-cat("🔁 Fonksiyonu Döngü Kullanarak Uygulama:\n")
+cat("Fonksiyonu Döngü Kullanarak Uygulama:\n")
 for (col_name in colnames(mtcars)) {
   cat("\n➡️", col_name, ":\n")
   cat("------------------------------\n")
@@ -23,7 +23,7 @@ for (col_name in colnames(mtcars)) {
 }
 
 # apply ile Alternatif Bir Yaklaşım
-cat("\n💡 apply ile Alternatif Yaklaşım:\n")
+cat("\n apply ile Alternatif Yaklaşım:\n")
 summary_results <- apply(mtcars, 2, my_summary_stats)
 print(summary_results)
 
@@ -36,13 +36,13 @@ library(dslabs)
 data("na_example")
 
 # NA sayısı
-cat("🔍 NA Sayısı:", sum(is.na(na_example)), "\n")
+cat(" NA Sayısı:", sum(is.na(na_example)), "\n")
 
 # NA'leri 2025 ile değiştir
 cleaned_data <- ifelse(is.na(na_example), 2025, na_example)
 
 # Yeni veri setinde eksik değer var mı?
-cat("✅ Kalan NA Sayısı:", sum(is.na(cleaned_data)), "\n")
+cat("Kalan NA Sayısı:", sum(is.na(cleaned_data)), "\n")
 
 # 2025 değeri kaç kez geçti?
-cat("🔢 2025 Degeri Sayısı:", sum(cleaned_data == 2025), "\n")
+cat("2025 Degeri Sayısı:", sum(cleaned_data == 2025), "\n")
