@@ -1,0 +1,96 @@
+---
+title: "Cinsiyete Göre İnternet Kullanımı"
+format: html
+editor: visual
+---
+
+## 📊 Meslek Gruplarına Göre Ortalama İnternet Kullanımı (2013–2024)
+
+```{r}
+# Gerekli paketleri çağır
+library(readxl)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+
+# Veriyi oku
+veri_raw <- read_excel("data/internetkullanim.xls", skip = 5, col_names = FALSE)
+
+# Yalnızca 11 meslek ve 2013–2024 yıllarını al
+veri <- veri_raw[1:11, 1:13]
+
+# Sütun adları
+colnames(veri) <- c("Meslek", as.character(2013:2024))
+
+# Meslek adlarını sadece Türkçe bırak (örneğin: "Yöneticiler\nManagers" → "Yöneticiler")
+veri$Meslek <- sapply(strsplit(veri$Meslek, "\n"), `[`, 1)
+
+# Uzun formata çevir
+veri_long <- veri %>%
+  pivot_longer(cols = -Meslek, names_to = "Yil", values_to = "Internet_Orani")
+
+# Sayısal veriye dönüştür
+veri_long$Internet_Orani <- as.numeric(veri_long$Internet_Orani)
+
+# Ortalama hesapla ve NA değerleri filtrele
+veri_ortalama <- veri_long %>%
+  group_by(Meslek) %>%
+  summarise(Ortalama = mean(Internet_Orani, na.rm = TRUE)) %>%
+  filter(!is.na(Ortalama))
+
+# Grafik oluştur
+ggplot(veri_ortalama, aes(x = reorder(Meslek, Ortalama), y = Ortalama)) +
+  geom_col(fill = "steelblue") +
+  coord_flip() +
+  labs(
+    title = "Meslek Gruplarına Göre Ortalama İnternet Kullanım Oranı (2013–2024)",
+    x = "Meslek",
+    y = "Oran (%)"
+  )
+```
+
+## 🧍‍♀️🧍‍♂️ Cinsiyete Göre Ortalama İnternet Kullanımı (2013–2024)
+
+```{r}
+library(readxl)
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+
+# Veriyi oku
+veri_raw <- read_excel("data/internetkullanim.xls", skip = 5, col_names = FALSE)
+
+# İlk 11 satır: 6 kadın + 5 erkek meslek grubu
+veri <- veri_raw[1:11, 1:13]
+colnames(veri) <- c("Meslek", as.character(2013:2024))
+
+# Meslek adlarından sadece Türkçeyi al
+veri$Meslek <- sapply(strsplit(veri$Meslek, "\n"), `[`, 1)
+
+# Cinsiyet sütunu ekle (ilk 6 satır kadın, sonra erkek)
+veri$Cinsiyet <- c(rep("Kadın", 6), rep("Erkek", 5))
+
+# Uzun formata çevir
+veri_long <- veri %>%
+  pivot_longer(cols = `2013`:`2024`, names_to = "Yil", values_to = "Internet_Orani")
+
+# Sayısal dönüşüm
+veri_long$Internet_Orani <- as.numeric(veri_long$Internet_Orani)
+
+# 🔹 Cinsiyete göre ortalama hesapla
+veri_cinsiyet <- veri_long %>%
+  group_by(Cinsiyet) %>%
+  summarise(Ortalama = mean(Internet_Orani, na.rm = TRUE)) %>%
+  filter(!is.na(Ortalama))
+
+# Grafik
+ggplot(veri_cinsiyet, aes(x = Cinsiyet, y = Ortalama, fill = Cinsiyet)) +
+  geom_col() +
+  labs(
+    title = "Cinsiyete Göre Ortalama İnternet Kullanımı (2013–2024)",
+    x = "Cinsiyet",
+    y = "Oran (%)"
+  ) +
+  theme_minimal()
+
+```

@@ -1,0 +1,18 @@
+project:
+  type: website
+
+website:
+  title: "Üniversite Yerleşim Tercihleri Analizi"
+  navbar:
+    left:
+      - text: "Anasayfa"
+        file: index.qmd
+      - text: "Proje"
+        file: project.qmd
+      - text: "Hakkımızda"
+        file: about.qmd
+
+format:
+  html:
+    theme: cosmo
+    toc: true

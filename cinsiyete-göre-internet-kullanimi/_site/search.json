@@ -1,0 +1,23 @@
+[
+  {
+    "objectID": "project.html",
+    "href": "project.html",
+    "title": "İnternet Kullanım Analizi",
+    "section": "",
+    "text": "Giriş\nBu proje, bireylerin cinsiyet ve meslek gruplarına göre internet kullanım oranlarını analiz etmeyi amaçlamaktadır.\n\n\nVeri Seti\n\nKaynak: TÜİK Açık Veri Portalı\n\nDosya: Cinsiyete ve Meslek Grubuna Göre Bireylerin İnternet Kullanım Oranı.xls\n\nDeğişkenler:\n\nYıl\nCinsiyet\nMeslek Grubu\nİnternet Kullanım Oranı (%)\n\n\n\n\nVeri Okuma ve Temizleme\n```{r}\nlibrary(readxl)\nlibrary(dplyr)\nlibrary(ggplot2)\nveri &lt;- read_excel(“data/internetkullanim.xls”, skip = 4)\nnames(veri) &lt;- c(“Yil”, “Cinsiyet”, “Meslek”, “Internet_Orani”)\nveri &lt;- veri %&gt;% filter(!is.na(Internet_Orani))\n\nlibrary(readxl)\nlibrary(dplyr)\nlibrary(ggplot2)\n\nveri_raw &lt;- read_excel(\"data/internetkullanim.xls\", skip = 6, col_names = FALSE)\nveri &lt;- veri_raw[, 1:4]\nnames(veri) &lt;- c(\"Yil\", \"Cinsiyet\", \"Meslek\", \"Internet_Orani\")\nveri &lt;- veri %&gt;%\n  filter(!is.na(Internet_Orani), !is.na(Meslek), !grepl(\"&lt;\", Meslek))\n\nveri %&gt;%\n  group_by(Meslek) %&gt;%\n  summarise(Ortalama = mean(Internet_Orani, na.rm = TRUE)) %&gt;%\n  ggplot(aes(x = reorder(Meslek, Ortalama), y = Ortalama)) +\n  geom_col(fill = \"steelblue\") +\n  coord_flip() +\n  labs(\n    title = \"Meslek Gruplarına Göre Ortalama İnternet Kullanım Oranı\",\n    x = \"Meslek\",\n    y = \"Oran (%)\"\n  )"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "7 NullPointer Bros",
+    "section": "",
+    "text": "Proje Ekibi\n\nBarış Doğan AVTAN\nUğur TOPAK\nMehmet AKIN\n\nDers: MUY665 - İş Analitiği\n\nDönem: 2024-2025 Bahar\n\nTeslim Tarihi: 11 Mayıs 2025"
+  },
+  {
+    "objectID": "project.html#meslek-gruplarına-göre-internet-kullanımı",
+    "href": "project.html#meslek-gruplarına-göre-internet-kullanımı",
+    "title": "Cinsiyete Göre İnternet Kullanımı",
+    "section": "",
+    "text": "library(readxl)\nlibrary(dplyr)\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\nlibrary(tidyr)\nlibrary(ggplot2)\n\n# Excel verisini oku (başlıkları atla)\nveri_raw &lt;- read_excel(\"data/internetkullanim.xls\", skip = 5, col_names = FALSE)\n\nNew names:\n• `` -&gt; `...1`\n• `` -&gt; `...2`\n• `` -&gt; `...3`\n• `` -&gt; `...4`\n• `` -&gt; `...5`\n• `` -&gt; `...6`\n• `` -&gt; `...7`\n• `` -&gt; `...8`\n• `` -&gt; `...9`\n• `` -&gt; `...10`\n• `` -&gt; `...11`\n• `` -&gt; `...12`\n• `` -&gt; `...13`\n\n# Sadece gerçek meslek satırlarını ve 2013–2024 yıllarını al\nveri &lt;- veri_raw[1:11, 1:13]  # 11 meslek, 12 yıl (2013–2024)\n\n# Sütun adlarını ver: 1. sütun = Meslek, kalanlar yıllar\ncolnames(veri) &lt;- c(\"Meslek\", as.character(2013:2024))\n\n# Uzun formata dönüştür\nveri_long &lt;- veri %&gt;%\n  pivot_longer(cols = -Meslek, names_to = \"Yil\", values_to = \"Internet_Orani\")\n\n# Sayısal veri dönüşümü\nveri_long$Internet_Orani &lt;- as.numeric(veri_long$Internet_Orani)\n\n# Ortalama oran hesapla\nveri_ortalama &lt;- veri_long %&gt;%\n  group_by(Meslek) %&gt;%\n  summarise(Ortalama = mean(Internet_Orani, na.rm = TRUE))\n\n# Grafik çiz\nggplot(veri_ortalama, aes(x = reorder(Meslek, Ortalama), y = Ortalama)) +\n  geom_col(fill = \"steelblue\") +\n  coord_flip() +\n  labs(\n    title = \"Meslek Gruplarına Göre Ortalama İnternet Kullanım Oranı (2013–2024)\",\n    x = \"Meslek\",\n    y = \"Oran (%)\"\n  )\n\nWarning: Removed 2 rows containing missing values or values outside the scale range\n(`geom_col()`)."
+  }
+]

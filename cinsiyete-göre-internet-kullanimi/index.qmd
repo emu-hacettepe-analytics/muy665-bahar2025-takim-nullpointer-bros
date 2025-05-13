@@ -1,0 +1,10 @@
+---
+title: "Ana Sayfa"
+format: html
+---
+
+# Hoş Geldiniz
+
+Bu web sitesi, MUY665 İş Analitiği dersi kapsamında hazırlanan “Cinsiyet ve Meslek Grubuna Göre İnternet Kullanım Oranı” başlıklı dönem projesini içermektedir.
+
+> Veri Kaynağı: TÜİK - <https://data.tuik.gov.tr/>
