@@ -49,7 +49,15 @@ ggplot(veri_ortalama, aes(x = reorder(Meslek, Ortalama), y = Ortalama)) +
   )
 ```
 
-## 🧍‍♀️🧍‍♂️ Cinsiyete Göre Ortalama İnternet Kullanımı (2013–2024)
+## 📝 Yorum ve Sonuç
+
+Veriler incelendiğinde, 2013–2024 yılları arasında tüm meslek gruplarında internet kullanım oranlarının ciddi şekilde arttığı gözlemlenmiştir. Özellikle profesyonel meslek mensupları, teknisyenler ve büro hizmetleri çalışanları yüksek oranlarda internet kullanımına sahiptir. Buna karşın nitelikli tarım ve vasıfsız işçiler gibi gruplarda bu oran nispeten daha düşüktür.
+
+Cinsiyet bazlı değerlendirmede, kadınların ve erkeklerin internet kullanım oranları arasında çok büyük farklar gözlemlenmemiştir; ancak bazı yıllarda erkeklerin kullanım oranı biraz daha yüksektir.
+
+Bu bulgular, dijital uçurumu azaltmak ve dezavantajlı meslek gruplarını hedefleyen dijital erişim politikaları geliştirmek için önemlidir.
+
+## ️ Cinsiyete Göre Ortalama İnternet Kullanımı (2013–2024)
 
 ```{r}
 library(readxl)
