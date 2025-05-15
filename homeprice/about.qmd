@@ -1,0 +1,21 @@
+---
+title: "7 NullPointer Bros"
+format: html
+---
+
+# Proje Ekibi
+
+-   Barış Doğan AVTAN
+
+-   Uğur TOPAK
+
+-   Mehmet AKIN
+
+    \
+    **Ders:** MUY665 - İş Analitiği\
+
+    **Dönem:** 2024-2025 Bahar\
+
+    **Teslim Tarihi:** 11 Mayıs 2025
+
+# 

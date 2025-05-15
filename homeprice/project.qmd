@@ -1,0 +1,164 @@
+---
+title: "Ev Fiyatları Analizi"
+format: html
+editor: visual
+---
+
+## 📊 Ev Fiyatları Analizi (2024-2025)
+
+### 📋 Veri Seti
+
+Bu proje, Türkiye'nin ev fiyatlarıyla ilgili veriler üzerinde yapılan analizleri içermektedir. Veri seti, \[Ev Fiyatları - 2024 \]https://www.kaggle.com web sayfasından alınmıştır ve 2004-2024 yılları arasındaki ev fiyatlarını içermektedir.
+
+### 📊 Keşifsel Veri Analizi (EDA)
+
+#### Veri Okuma ve İlk İnceleme
+
+```{r}
+
+library(readxl)
+library(dplyr)
+library(ggplot2)
+library(scales)  # Sayı formatlamayı sağlamak için
+
+# Veri setini okuma
+veri <- read_excel("data/home_price_converted.xlsx")
+
+
+
+
+
+# NA değerlerini medyan ile dolduralım (Net_Metrekare ve Fiyat sütunları)
+veri_cleaned <- veri %>%
+  mutate(
+    Fiyat = ifelse(is.na(Fiyat), median(Fiyat, na.rm = TRUE), Fiyat),
+    Net_Metrekare = ifelse(is.na(Net_Metrekare), median(Net_Metrekare, na.rm = TRUE), Net_Metrekare)
+  )
+
+
+# Ev fiyatlarındaki aykırı değerleri kaldırma
+veri_cleaned <- veri_cleaned %>%
+  filter(Fiyat < quantile(Fiyat, 0.95))
+
+
+# Ev fiyatları ile net metrekare arasındaki ilişki
+ggplot(veri_cleaned, aes(x = Net_Metrekare, y = Fiyat)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  scale_y_continuous(labels = scales::comma_format()) +  # Ev fiyatını düzgün formatla (binlerce ayraçlı)
+  scale_x_continuous(labels = scales::comma_format()) +  # Metrekareyi de düzgün formatla
+  labs(
+    title = "Ev Fiyatları ile Net Metrekare Arasındaki İlişki",
+    x = "Net Metrekare",
+    y = "Ev Fiyatı (TL)"
+  ) +
+  theme_minimal()  # Temiz tema
+
+
+# Ev fiyatlarının bilimsel notasyon yerine normal sayılarla gösterilmesi
+veri_cleaned$Fiyat <- format(veri_cleaned$Fiyat, scientific = FALSE)
+
+# Net metrekareyi de düzenleyelim
+veri_cleaned$Net_Metrekare <- format(veri_cleaned$Net_Metrekare, scientific = FALSE)
+
+# Ev fiyatları ile net metrekare arasındaki ilişkiyi çizme
+ggplot(veri_cleaned, aes(x = Net_Metrekare, y = as.numeric(Fiyat))) +  # Fiyatı sayıya çeviriyoruz
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE) +
+  labs(title = "Ev Fiyatları ile Net Metrekare Arasındaki İlişki", x = "Net Metrekare", y = "Ev Fiyatı") +
+  scale_y_continuous(labels = label_number(scale = 1, suffix = ""))  # Binlik ayırıcı ekler
+
+
+```
+
+Grafikleri yorumlarken, birkaç önemli faktöre dikkat etmeniz gerekir. Ev fiyatları ile net metrekare arasındaki ilişkiyi gösteren grafik, görsel bir analiz yapmanızı sağlar. İşte grafiği yorumlamak için kullanabileceğiniz bazı adımlar ve öneriler:
+
+### 1. **Veri Dağılımını İnceleme**
+
+-   **Dağılımın şekli**: Eğer grafikteki veriler bir düz çizgi etrafında kümeleniyorsa, bu genellikle bir **doğrusal ilişkiyi** işaret eder. Yani, net metrekare arttıkça ev fiyatları da artar. Örneğin, net metrekare ile ev fiyatları arasında pozitif bir ilişki olabilir.
+
+-   **Eğilim hattı**: Grafik üzerinde çizilen doğrusal eğilim (trend) hattı, ev fiyatlarının metrekareye göre nasıl değiştiğini gösterir. Eğer eğilim yükseliyorsa, bu net metrekare arttıkça ev fiyatlarının da arttığını gösterir.
+
+-   
+
+### 2. **Aykırı Değerlerin Belirlenmesi**
+
+-   **Aykırı değerler**: Eğer grafikte belirli noktalar diğerlerinden çok uzaksa, bu aykırı değerler olarak kabul edilebilir. Örneğin, metrekareyi arttıran ancak fiyatı çok düşük olan evler ya da çok yüksek fiyatlı evler, veri setinde olağandışı noktalar olabilir.
+
+-   **Aykırı değerlerin etkisi**: Aykırı değerlerin, veri analizi sonuçlarını yanıltabileceğini unutmayın. Bu tür veriler, ortalama veya regresyon analizinin sonuçlarını etkileyebilir.
+
+-   
+
+### 3. **Ev Fiyatlarındaki Değişim**
+
+```         
+**Ev fiyatlarının genel artışı**: Grafik üzerinde, net metrekare ile fiyat arasındaki ilişkiyi gözlemleyin. Eğer fiyatlar genellikle metrekare arttıkça artıyorsa, bu piyasada daha büyük evlerin daha yüksek fiyatlara satıldığını gösterir.
+
+
+**Metrekare ile fiyat arasındaki hız**: Eğer fiyatlar net metrekareye orantılı olarak artıyorsa, bu durum, metrekare arttıkça evin değerinin belirgin şekilde yükseldiğini gösterir. Fakat, bazı durumlarda fiyat artışı daha düz olabilir.
+```
+
+### 6. **Grafikteki Zorluklar veya Dengesizlikler**
+
+-   
+
+-   **Veri kümelerinin yoğunluğu**: Eğer grafikte belli bir bölge (örneğin, düşük metrekareli ve düşük fiyatlı evler) yoğun bir şekilde kümelenmişse, bu evlerin piyasada daha yaygın olduğunu gösterebilir. Aynı şekilde, bazı metrekare aralıklarında fiyatlar çok yüksek olabilir.
+
+-   
+
+-   **Dağılımda simetri veya asimetri**: Eğer grafik sağa veya sola doğru eğilim gösteriyorsa, bu, fiyatların veya metrekarelerin asimetrik olduğunu gösterebilir. Bu durum daha yüksek veya düşük metrekarelerin piyasada daha yaygın olduğunu gösterebilir.
+
+-   
+
+### Yorum:
+
+"Grafikte, ev fiyatlarının net metrekare ile genellikle arttığı gözlemlenmektedir. Bu, daha büyük evlerin daha pahalı olduğu genel kuralına uygun bir durumdur. Ancak, bazı aykırı değerler (örneğin, çok büyük metrekarelere sahip ancak düşük fiyatlı evler) verinin doğrusal ilişkisini bozuyor. Buna göre, ev fiyatları ile metrekare arasındaki ilişki, genellikle doğrusal bir artış gösteriyor, ancak diğer faktörlerin de etkili olabileceği düşünülmektedir."
+
+### **Ek İncelemler**
+
+### **Korelasyon Analizi**
+
+-   **Ev fiyatları ile diğer değişkenler arasındaki korelasyon**: Net metrekare dışında, diğer faktörlerin (örneğin, oda sayısı, banyo sayısı, binanın yaşı) ev fiyatları ile ilişkisini inceleyebilirsiniz. Korelasyon analizi yaparak bu değişkenlerin birbirleriyle olan ilişkisini ve ev fiyatlarına ne kadar etki ettiğini görebilirsiniz.
+
+```{r}
+
+
+# Oda sayısı ve ev fiyatı arasındaki ilişkiyi kutu grafiğiyle gösterelim
+ggplot(veri_cleaned, aes(x = factor(Oda_Sayisi), y = Fiyat)) +
+  geom_boxplot(fill = "skyblue", color = "black") +  # Kutu grafiği
+  labs(
+    title = "Oda Sayısı ve Ev Fiyatı Arasındaki İlişki",
+    x = "Oda Sayısı",
+    y = "Ev Fiyatı (TL)"
+  ) +
+  theme_minimal()  # Temayı sade tutalım
+
+```
+
+### Oda Sayısı ve Ev Fiyatı **Veri Görselleştirme Amacı:**
+
+Ev fiyatları ve oda sayısı arasındaki ilişkiyi görselleştirirken, temel amacımız, oda sayısının ev fiyatları üzerindeki etkisini görmek. Oda sayısının, genellikle daha büyük evler ve daha yüksek fiyatlarla ilişkili olduğu tahmin edilebilir, ancak verinin gerçek dağılımını inceleyerek bu ilişkiyi doğrulamak.
+
+### 2. **Görsel İpuçları:**
+
+Yıllar içinde oda sayısı arttıkça ev fiyatlarının da artıp artmadığına dair bir trend gözlemi yapmayı amaçlıyoruz. Fakat şunu unutmamak gerekir:
+
+-   **Eğilimlerin belirlenmesi:** Genellikle oda sayısı arttıkça evin fiyatı da artar, ancak oda başına fiyat farklılıkları şehirden şehire veya binanın yaşı, lokasyonu gibi diğer faktörlere göre değişkenlik gösterebilir.
+
+    **Aykırı değerler:** Grafik üzerinde bazı noktalar eğilime uymuyor olabilir (örneğin çok yüksek fiyatlar). Bu tür aykırı değerler, örneğin, büyük villalar veya prestijli bölgelerdeki evler olabilir. Bu tür aykırı değerler modelin yorumlanmasında yanıltıcı olabilir, bu nedenle bunları analizde ayrı tutmak gerekebilir.
+
+### 3. **Grafikteki İletişim:**
+
+Görselleştirme, sayısal verinin daha anlamlı bir şekilde yorumlanmasına olanak sağlar. Ancak, burada birkaç önemli unsur şunlardır:
+
+-   **Oda Sayısı:** Oda sayısının artması, genellikle evin büyüklüğünü ve daha fazla yaşam alanı sunduğunu gösterir, ancak bu her zaman fiyat artışı anlamına gelmez. Bazı durumlarda, evin yaşına veya lokasyonuna bağlı olarak fiyat artışları daha düşük olabilir.
+
+    **Fiyatlar:** Yüksek fiyatlı evlerin genellikle daha fazla oda sayısına sahip olacağı beklenir, ancak bu her zaman doğrusal bir ilişki olmayabilir. Örneğin, bir odalı modern, şık bir daire büyük ve eski bir evden daha yüksek fiyatla satılabilir.
+
+### 4. **Trend Çizgisi (İstatistiksel Doğrulama):**
+
+Eğilim çizgisi eklenmiş olması, oda sayısı ile ev fiyatları arasındaki ilişkiyi daha net gösterir. Bu çizgi, genellikle oda sayısı arttıkça ev fiyatlarının da arttığını gösterecek. Ancak, belirli bir noktadan sonra, oda sayısının ev fiyatlarına olan etkisinin zayıfladığını gözlemleyebilirsiniz. Yani, 5 odalı bir ev ile 10 odalı bir ev arasındaki fiyat farkı, 2 odalı bir ev ile 5 odalı bir ev arasındaki farktan çok daha büyük olabilir.
+
+### 5. **Yorum ve Sonuçlar:**
+
+Grafik üzerinden yapılan değerlendirmede, oda sayısının ev fiyatlarını etkileyen önemli bir faktör olduğunu söyleyebiliriz, ancak bunun yanı sıra lokasyon, binanın yaşı, kat sayısı gibi diğer değişkenlerin de önemli rol oynadığını göz önünde bulundurmalıyız. Grafikten, oda sayısı arttıkça fiyatların arttığını ama bu ilişkinin düz bir çizgi şeklinde değil, bazı noktalar için daha karmaşık olduğunu gözlemleyebiliriz.

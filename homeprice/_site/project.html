@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.57">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Ev Fiyatları Analizi – Cinsiyete Göre İnternet Kullanımı</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Cinsiyete Göre İnternet Kullanımı</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html"> 
+<span class="menu-text">Ana Sayfa</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html"> 
+<span class="menu-text">Hakkında</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./project.html" aria-current="page"> 
+<span class="menu-text">Proje</span></a>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#ev-fiyatları-analizi-2024-2025" id="toc-ev-fiyatları-analizi-2024-2025" class="nav-link active" data-scroll-target="#ev-fiyatları-analizi-2024-2025">📊 Ev Fiyatları Analizi (2024-2025)</a>
+  <ul class="collapse">
+  <li><a href="#veri-seti" id="toc-veri-seti" class="nav-link" data-scroll-target="#veri-seti">📋 Veri Seti</a></li>
+  <li><a href="#keşifsel-veri-analizi-eda" id="toc-keşifsel-veri-analizi-eda" class="nav-link" data-scroll-target="#keşifsel-veri-analizi-eda">📊 Keşifsel Veri Analizi (EDA)</a></li>
+  <li><a href="#veri-dağılımını-inceleme" id="toc-veri-dağılımını-inceleme" class="nav-link" data-scroll-target="#veri-dağılımını-inceleme">1. <strong>Veri Dağılımını İnceleme</strong></a></li>
+  <li><a href="#aykırı-değerlerin-belirlenmesi" id="toc-aykırı-değerlerin-belirlenmesi" class="nav-link" data-scroll-target="#aykırı-değerlerin-belirlenmesi">2. <strong>Aykırı Değerlerin Belirlenmesi</strong></a></li>
+  <li><a href="#ev-fiyatlarındaki-değişim" id="toc-ev-fiyatlarındaki-değişim" class="nav-link" data-scroll-target="#ev-fiyatlarındaki-değişim">3. <strong>Ev Fiyatlarındaki Değişim</strong></a></li>
+  <li><a href="#grafikteki-zorluklar-veya-dengesizlikler" id="toc-grafikteki-zorluklar-veya-dengesizlikler" class="nav-link" data-scroll-target="#grafikteki-zorluklar-veya-dengesizlikler">6. <strong>Grafikteki Zorluklar veya Dengesizlikler</strong></a></li>
+  <li><a href="#yorum" id="toc-yorum" class="nav-link" data-scroll-target="#yorum">Yorum:</a></li>
+  <li><a href="#ek-incelemler" id="toc-ek-incelemler" class="nav-link" data-scroll-target="#ek-incelemler"><strong>Ek İncelemler</strong></a></li>
+  <li><a href="#korelasyon-analizi" id="toc-korelasyon-analizi" class="nav-link" data-scroll-target="#korelasyon-analizi"><strong>Korelasyon Analizi</strong></a></li>
+  <li><a href="#oda-sayısı-ve-ev-fiyatı-veri-görselleştirme-amacı" id="toc-oda-sayısı-ve-ev-fiyatı-veri-görselleştirme-amacı" class="nav-link" data-scroll-target="#oda-sayısı-ve-ev-fiyatı-veri-görselleştirme-amacı">Oda Sayısı ve Ev Fiyatı <strong>Veri Görselleştirme Amacı:</strong></a></li>
+  <li><a href="#görsel-ipuçları" id="toc-görsel-ipuçları" class="nav-link" data-scroll-target="#görsel-ipuçları">2. <strong>Görsel İpuçları:</strong></a></li>
+  <li><a href="#grafikteki-iletişim" id="toc-grafikteki-iletişim" class="nav-link" data-scroll-target="#grafikteki-iletişim">3. <strong>Grafikteki İletişim:</strong></a></li>
+  <li><a href="#trend-çizgisi-istatistiksel-doğrulama" id="toc-trend-çizgisi-istatistiksel-doğrulama" class="nav-link" data-scroll-target="#trend-çizgisi-istatistiksel-doğrulama">4. <strong>Trend Çizgisi (İstatistiksel Doğrulama):</strong></a></li>
+  <li><a href="#yorum-ve-sonuçlar" id="toc-yorum-ve-sonuçlar" class="nav-link" data-scroll-target="#yorum-ve-sonuçlar">5. <strong>Yorum ve Sonuçlar:</strong></a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Ev Fiyatları Analizi</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="ev-fiyatları-analizi-2024-2025" class="level2">
+<h2 class="anchored" data-anchor-id="ev-fiyatları-analizi-2024-2025">📊 Ev Fiyatları Analizi (2024-2025)</h2>
+<section id="veri-seti" class="level3">
+<h3 class="anchored" data-anchor-id="veri-seti">📋 Veri Seti</h3>
+<p>Bu proje, Türkiye’nin ev fiyatlarıyla ilgili veriler üzerinde yapılan analizleri içermektedir. Veri seti, [Ev Fiyatları - 2024 ]https://www.kaggle.com web sayfasından alınmıştır ve 2004-2024 yılları arasındaki ev fiyatlarını içermektedir.</p>
+</section>
+<section id="keşifsel-veri-analizi-eda" class="level3">
+<h3 class="anchored" data-anchor-id="keşifsel-veri-analizi-eda">📊 Keşifsel Veri Analizi (EDA)</h3>
+<section id="veri-okuma-ve-ilk-inceleme" class="level4">
+<h4 class="anchored" data-anchor-id="veri-okuma-ve-ilk-inceleme">Veri Okuma ve İlk İnceleme</h4>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'dplyr'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:stats':
+
+    filter, lag</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:base':
+
+    intersect, setdiff, setequal, union</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(scales)  <span class="co"># Sayı formatlamayı sağlamak için</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Veri setini okuma</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>veri <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"data/home_price_converted.xlsx"</span>)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co"># NA değerlerini medyan ile dolduralım (Net_Metrekare ve Fiyat sütunları)</span></span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>veri_cleaned <span class="ot">&lt;-</span> veri <span class="sc">%&gt;%</span></span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">Fiyat =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(Fiyat), <span class="fu">median</span>(Fiyat, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), Fiyat),</span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">Net_Metrekare =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(Net_Metrekare), <span class="fu">median</span>(Net_Metrekare, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), Net_Metrekare)</span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Ev fiyatlarındaki aykırı değerleri kaldırma</span></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>veri_cleaned <span class="ot">&lt;-</span> veri_cleaned <span class="sc">%&gt;%</span></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Fiyat <span class="sc">&lt;</span> <span class="fu">quantile</span>(Fiyat, <span class="fl">0.95</span>))</span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Ev fiyatları ile net metrekare arasındaki ilişki</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(veri_cleaned, <span class="fu">aes</span>(<span class="at">x =</span> Net_Metrekare, <span class="at">y =</span> Fiyat)) <span class="sc">+</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">comma_format</span>()) <span class="sc">+</span>  <span class="co"># Ev fiyatını düzgün formatla (binlerce ayraçlı)</span></span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">comma_format</span>()) <span class="sc">+</span>  <span class="co"># Metrekareyi de düzgün formatla</span></span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Ev Fiyatları ile Net Metrekare Arasındaki İlişki"</span>,</span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Net Metrekare"</span>,</span>
+<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Ev Fiyatı (TL)"</span></span>
+<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()  <span class="co"># Temiz tema</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="project_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ev fiyatlarının bilimsel notasyon yerine normal sayılarla gösterilmesi</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>veri_cleaned<span class="sc">$</span>Fiyat <span class="ot">&lt;-</span> <span class="fu">format</span>(veri_cleaned<span class="sc">$</span>Fiyat, <span class="at">scientific =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Net metrekareyi de düzenleyelim</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>veri_cleaned<span class="sc">$</span>Net_Metrekare <span class="ot">&lt;-</span> <span class="fu">format</span>(veri_cleaned<span class="sc">$</span>Net_Metrekare, <span class="at">scientific =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Ev fiyatları ile net metrekare arasındaki ilişkiyi çizme</span></span>
+<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(veri_cleaned, <span class="fu">aes</span>(<span class="at">x =</span> Net_Metrekare, <span class="at">y =</span> <span class="fu">as.numeric</span>(Fiyat))) <span class="sc">+</span>  <span class="co"># Fiyatı sayıya çeviriyoruz</span></span>
+<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Ev Fiyatları ile Net Metrekare Arasındaki İlişki"</span>, <span class="at">x =</span> <span class="st">"Net Metrekare"</span>, <span class="at">y =</span> <span class="st">"Ev Fiyatı"</span>) <span class="sc">+</span></span>
+<span id="cb7-12"><a href="#cb7-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> <span class="fu">label_number</span>(<span class="at">scale =</span> <span class="dv">1</span>, <span class="at">suffix =</span> <span class="st">""</span>))  <span class="co"># Binlik ayırıcı ekler</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="project_files/figure-html/unnamed-chunk-1-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Grafikleri yorumlarken, birkaç önemli faktöre dikkat etmeniz gerekir. Ev fiyatları ile net metrekare arasındaki ilişkiyi gösteren grafik, görsel bir analiz yapmanızı sağlar. İşte grafiği yorumlamak için kullanabileceğiniz bazı adımlar ve öneriler:</p>
+</section>
+</section>
+<section id="veri-dağılımını-inceleme" class="level3">
+<h3 class="anchored" data-anchor-id="veri-dağılımını-inceleme">1. <strong>Veri Dağılımını İnceleme</strong></h3>
+<ul>
+<li><p><strong>Dağılımın şekli</strong>: Eğer grafikteki veriler bir düz çizgi etrafında kümeleniyorsa, bu genellikle bir <strong>doğrusal ilişkiyi</strong> işaret eder. Yani, net metrekare arttıkça ev fiyatları da artar. Örneğin, net metrekare ile ev fiyatları arasında pozitif bir ilişki olabilir.</p></li>
+<li><p><strong>Eğilim hattı</strong>: Grafik üzerinde çizilen doğrusal eğilim (trend) hattı, ev fiyatlarının metrekareye göre nasıl değiştiğini gösterir. Eğer eğilim yükseliyorsa, bu net metrekare arttıkça ev fiyatlarının da arttığını gösterir.</p></li>
+<li></li>
+</ul>
+</section>
+<section id="aykırı-değerlerin-belirlenmesi" class="level3">
+<h3 class="anchored" data-anchor-id="aykırı-değerlerin-belirlenmesi">2. <strong>Aykırı Değerlerin Belirlenmesi</strong></h3>
+<ul>
+<li><p><strong>Aykırı değerler</strong>: Eğer grafikte belirli noktalar diğerlerinden çok uzaksa, bu aykırı değerler olarak kabul edilebilir. Örneğin, metrekareyi arttıran ancak fiyatı çok düşük olan evler ya da çok yüksek fiyatlı evler, veri setinde olağandışı noktalar olabilir.</p></li>
+<li><p><strong>Aykırı değerlerin etkisi</strong>: Aykırı değerlerin, veri analizi sonuçlarını yanıltabileceğini unutmayın. Bu tür veriler, ortalama veya regresyon analizinin sonuçlarını etkileyebilir.</p></li>
+<li></li>
+</ul>
+</section>
+<section id="ev-fiyatlarındaki-değişim" class="level3">
+<h3 class="anchored" data-anchor-id="ev-fiyatlarındaki-değişim">3. <strong>Ev Fiyatlarındaki Değişim</strong></h3>
+<pre><code>**Ev fiyatlarının genel artışı**: Grafik üzerinde, net metrekare ile fiyat arasındaki ilişkiyi gözlemleyin. Eğer fiyatlar genellikle metrekare arttıkça artıyorsa, bu piyasada daha büyük evlerin daha yüksek fiyatlara satıldığını gösterir.
+
+
+**Metrekare ile fiyat arasındaki hız**: Eğer fiyatlar net metrekareye orantılı olarak artıyorsa, bu durum, metrekare arttıkça evin değerinin belirgin şekilde yükseldiğini gösterir. Fakat, bazı durumlarda fiyat artışı daha düz olabilir.</code></pre>
+</section>
+<section id="grafikteki-zorluklar-veya-dengesizlikler" class="level3">
+<h3 class="anchored" data-anchor-id="grafikteki-zorluklar-veya-dengesizlikler">6. <strong>Grafikteki Zorluklar veya Dengesizlikler</strong></h3>
+<ul>
+<li></li>
+<li><p><strong>Veri kümelerinin yoğunluğu</strong>: Eğer grafikte belli bir bölge (örneğin, düşük metrekareli ve düşük fiyatlı evler) yoğun bir şekilde kümelenmişse, bu evlerin piyasada daha yaygın olduğunu gösterebilir. Aynı şekilde, bazı metrekare aralıklarında fiyatlar çok yüksek olabilir.</p></li>
+<li></li>
+<li><p><strong>Dağılımda simetri veya asimetri</strong>: Eğer grafik sağa veya sola doğru eğilim gösteriyorsa, bu, fiyatların veya metrekarelerin asimetrik olduğunu gösterebilir. Bu durum daha yüksek veya düşük metrekarelerin piyasada daha yaygın olduğunu gösterebilir.</p></li>
+<li></li>
+</ul>
+</section>
+<section id="yorum" class="level3">
+<h3 class="anchored" data-anchor-id="yorum">Yorum:</h3>
+<p>“Grafikte, ev fiyatlarının net metrekare ile genellikle arttığı gözlemlenmektedir. Bu, daha büyük evlerin daha pahalı olduğu genel kuralına uygun bir durumdur. Ancak, bazı aykırı değerler (örneğin, çok büyük metrekarelere sahip ancak düşük fiyatlı evler) verinin doğrusal ilişkisini bozuyor. Buna göre, ev fiyatları ile metrekare arasındaki ilişki, genellikle doğrusal bir artış gösteriyor, ancak diğer faktörlerin de etkili olabileceği düşünülmektedir.”</p>
+</section>
+<section id="ek-incelemler" class="level3">
+<h3 class="anchored" data-anchor-id="ek-incelemler"><strong>Ek İncelemler</strong></h3>
+</section>
+<section id="korelasyon-analizi" class="level3">
+<h3 class="anchored" data-anchor-id="korelasyon-analizi"><strong>Korelasyon Analizi</strong></h3>
+<ul>
+<li><strong>Ev fiyatları ile diğer değişkenler arasındaki korelasyon</strong>: Net metrekare dışında, diğer faktörlerin (örneğin, oda sayısı, banyo sayısı, binanın yaşı) ev fiyatları ile ilişkisini inceleyebilirsiniz. Korelasyon analizi yaparak bu değişkenlerin birbirleriyle olan ilişkisini ve ev fiyatlarına ne kadar etki ettiğini görebilirsiniz.</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Oda sayısı ve ev fiyatı arasındaki ilişkiyi kutu grafiğiyle gösterelim</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(veri_cleaned, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(Oda_Sayisi), <span class="at">y =</span> Fiyat)) <span class="sc">+</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">"skyblue"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span>  <span class="co"># Kutu grafiği</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Oda Sayısı ve Ev Fiyatı Arasındaki İlişki"</span>,</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Oda Sayısı"</span>,</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Ev Fiyatı (TL)"</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()  <span class="co"># Temayı sade tutalım</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="project_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="oda-sayısı-ve-ev-fiyatı-veri-görselleştirme-amacı" class="level3">
+<h3 class="anchored" data-anchor-id="oda-sayısı-ve-ev-fiyatı-veri-görselleştirme-amacı">Oda Sayısı ve Ev Fiyatı <strong>Veri Görselleştirme Amacı:</strong></h3>
+<p>Ev fiyatları ve oda sayısı arasındaki ilişkiyi görselleştirirken, temel amacımız, oda sayısının ev fiyatları üzerindeki etkisini görmek. Oda sayısının, genellikle daha büyük evler ve daha yüksek fiyatlarla ilişkili olduğu tahmin edilebilir, ancak verinin gerçek dağılımını inceleyerek bu ilişkiyi doğrulamak.</p>
+</section>
+<section id="görsel-ipuçları" class="level3">
+<h3 class="anchored" data-anchor-id="görsel-ipuçları">2. <strong>Görsel İpuçları:</strong></h3>
+<p>Yıllar içinde oda sayısı arttıkça ev fiyatlarının da artıp artmadığına dair bir trend gözlemi yapmayı amaçlıyoruz. Fakat şunu unutmamak gerekir:</p>
+<ul>
+<li><p><strong>Eğilimlerin belirlenmesi:</strong> Genellikle oda sayısı arttıkça evin fiyatı da artar, ancak oda başına fiyat farklılıkları şehirden şehire veya binanın yaşı, lokasyonu gibi diğer faktörlere göre değişkenlik gösterebilir.</p>
+<p><strong>Aykırı değerler:</strong> Grafik üzerinde bazı noktalar eğilime uymuyor olabilir (örneğin çok yüksek fiyatlar). Bu tür aykırı değerler, örneğin, büyük villalar veya prestijli bölgelerdeki evler olabilir. Bu tür aykırı değerler modelin yorumlanmasında yanıltıcı olabilir, bu nedenle bunları analizde ayrı tutmak gerekebilir.</p></li>
+</ul>
+</section>
+<section id="grafikteki-iletişim" class="level3">
+<h3 class="anchored" data-anchor-id="grafikteki-iletişim">3. <strong>Grafikteki İletişim:</strong></h3>
+<p>Görselleştirme, sayısal verinin daha anlamlı bir şekilde yorumlanmasına olanak sağlar. Ancak, burada birkaç önemli unsur şunlardır:</p>
+<ul>
+<li><p><strong>Oda Sayısı:</strong> Oda sayısının artması, genellikle evin büyüklüğünü ve daha fazla yaşam alanı sunduğunu gösterir, ancak bu her zaman fiyat artışı anlamına gelmez. Bazı durumlarda, evin yaşına veya lokasyonuna bağlı olarak fiyat artışları daha düşük olabilir.</p>
+<p><strong>Fiyatlar:</strong> Yüksek fiyatlı evlerin genellikle daha fazla oda sayısına sahip olacağı beklenir, ancak bu her zaman doğrusal bir ilişki olmayabilir. Örneğin, bir odalı modern, şık bir daire büyük ve eski bir evden daha yüksek fiyatla satılabilir.</p></li>
+</ul>
+</section>
+<section id="trend-çizgisi-istatistiksel-doğrulama" class="level3">
+<h3 class="anchored" data-anchor-id="trend-çizgisi-istatistiksel-doğrulama">4. <strong>Trend Çizgisi (İstatistiksel Doğrulama):</strong></h3>
+<p>Eğilim çizgisi eklenmiş olması, oda sayısı ile ev fiyatları arasındaki ilişkiyi daha net gösterir. Bu çizgi, genellikle oda sayısı arttıkça ev fiyatlarının da arttığını gösterecek. Ancak, belirli bir noktadan sonra, oda sayısının ev fiyatlarına olan etkisinin zayıfladığını gözlemleyebilirsiniz. Yani, 5 odalı bir ev ile 10 odalı bir ev arasındaki fiyat farkı, 2 odalı bir ev ile 5 odalı bir ev arasındaki farktan çok daha büyük olabilir.</p>
+</section>
+<section id="yorum-ve-sonuçlar" class="level3">
+<h3 class="anchored" data-anchor-id="yorum-ve-sonuçlar">5. <strong>Yorum ve Sonuçlar:</strong></h3>
+<p>Grafik üzerinden yapılan değerlendirmede, oda sayısının ev fiyatlarını etkileyen önemli bir faktör olduğunu söyleyebiliriz, ancak bunun yanı sıra lokasyon, binanın yaşı, kat sayısı gibi diğer değişkenlerin de önemli rol oynadığını göz önünde bulundurmalıyız. Grafikten, oda sayısı arttıkça fiyatların arttığını ama bu ilişkinin düz bir çizgi şeklinde değil, bazı noktalar için daha karmaşık olduğunu gözlemleyebiliriz.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
