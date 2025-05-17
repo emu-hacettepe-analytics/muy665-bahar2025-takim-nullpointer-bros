@@ -25,9 +25,6 @@ library(scales)  # Sayı formatlamayı sağlamak için
 veri <- read_excel("data/home_price_converted.xlsx")
 
 
-
-
-
 # NA değerlerini medyan ile dolduralım (Net_Metrekare ve Fiyat sütunları)
 veri_cleaned <- veri %>%
   mutate(
@@ -122,16 +119,33 @@ Grafikleri yorumlarken, birkaç önemli faktöre dikkat etmeniz gerekir. Ev fiya
 
 ```{r}
 
+options(warn = -1)
 
-# Oda sayısı ve ev fiyatı arasındaki ilişkiyi kutu grafiğiyle gösterelim
-ggplot(veri_cleaned, aes(x = factor(Oda_Sayisi), y = Fiyat)) +
-  geom_boxplot(fill = "skyblue", color = "black") +  # Kutu grafiği
+
+# Oda Sayısı ve Fiyat sütunlarındaki NA değerlerini ortalama ile dolduralım
+veri_cleaned$Oda_Says <- as.numeric(veri_cleaned$Oda_Sayisi)  # Sayısal formata dönüştür
+veri_cleaned$Fiyat <- as.numeric(veri_cleaned$Fiyat)  # Fiyatı sayısal yapalım
+
+# Hatalı NA değerlerini medyan ile dolduralım
+veri_cleaned$Oda_Says[is.na(veri_cleaned$Oda_Sayisi)] <- median(veri_cleaned$Oda_Says, na.rm = TRUE)
+veri_cleaned$Fiyat[is.na(veri_cleaned$Fiyat)] <- median(veri_cleaned$Fiyat, na.rm = TRUE)
+
+# Oda Sayısına göre ortalama ev fiyatlarını hesaplayalım
+veri_ortalama <- veri_cleaned %>%
+  group_by(Oda_Sayisi) %>%
+  summarise(Ortalama_Fiyat = mean(Fiyat, na.rm = TRUE))
+
+# Çizgi grafiği tekrar çizelim
+ggplot(veri_ortalama, aes(x = factor(Oda_Sayisi), y = Ortalama_Fiyat)) + 
+  geom_line(color = "blue", size = 1) +  # Çizgi
+  geom_point(color = "red", size = 2) +  # Noktalar
   labs(
-    title = "Oda Sayısı ve Ev Fiyatı Arasındaki İlişki",
+    title = "Oda Sayısı ve Ortalama Ev Fiyatı Arasındaki İlişki",
     x = "Oda Sayısı",
-    y = "Ev Fiyatı (TL)"
+    y = "Ortalama Ev Fiyatı (TL)"
   ) +
-  theme_minimal()  # Temayı sade tutalım
+  theme_minimal()
+
 
 ```
 
@@ -162,3 +176,83 @@ Eğilim çizgisi eklenmiş olması, oda sayısı ile ev fiyatları arasındaki i
 ### 5. **Yorum ve Sonuçlar:**
 
 Grafik üzerinden yapılan değerlendirmede, oda sayısının ev fiyatlarını etkileyen önemli bir faktör olduğunu söyleyebiliriz, ancak bunun yanı sıra lokasyon, binanın yaşı, kat sayısı gibi diğer değişkenlerin de önemli rol oynadığını göz önünde bulundurmalıyız. Grafikten, oda sayısı arttıkça fiyatların arttığını ama bu ilişkinin düz bir çizgi şeklinde değil, bazı noktalar için daha karmaşık olduğunu gözlemleyebiliriz.
+
+```{r}
+# Ortalama ev fiyatını şehir bazında hesaplayalım
+veri_sehir <- veri_cleaned %>%
+  group_by(Sehir) %>%  # Burada doğru kolon ismini kullanıyoruz
+  summarise(Ortalama_Fiyat = mean(Fiyat, na.rm = TRUE)) %>%
+  arrange(desc(Ortalama_Fiyat))  # Fiyatı azalan sıraya göre sıralayalım
+
+# En yüksek 5 şehri seçelim
+veri_sehir_top5 <- head(veri_sehir, 5)
+
+# Fiyatları tam sayıya çeviriyoruz
+veri_sehir_top5$Ortalama_Fiyat <- round(veri_sehir_top5$Ortalama_Fiyat)
+
+# Grafik
+ggplot(veri_sehir_top5, aes(x = reorder(Sehir, Ortalama_Fiyat), y = Ortalama_Fiyat)) +
+  geom_bar(stat = "identity", fill = "skyblue", color = "black") +
+  labs(
+    title = "Türkiye Ev Fiyatı Ortalamasında Olan Ilk 5 Sehir",
+    y = "Ortalama Ev Fiyatı (TL)"
+  ) +
+  theme_minimal() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) +  # X ekseni etiketlerini döndürdük
+  scale_y_continuous(labels = scales::comma)  # Fiyatları virgüllü formatta göster
+
+
+```
+
+```{r}
+
+# Binanın yaşını sayısal verilere dönüştürme (Eğer kategorikse)
+veri_cleaned$Binanin_Yasi <- as.numeric(veri_cleaned$Binanin_Yasi)
+
+# Ev fiyatları ile binanın yaşı arasındaki ilişkiyi inceleyelim
+ggplot(veri_cleaned, aes(x = Binanin_Yasi, y = Fiyat)) +
+  geom_point(color = "blue", alpha = 0.5) +  # Dağılım noktalarını çiz
+  geom_smooth(method = "lm", color = "red") +  # Eğri çizelim
+  labs(
+    title = "Ev Fiyatları ve Binanın Yaşı Arasındaki İlişki",
+    x = "Bina Yaşı",
+    y = "Ev Fiyatı (TL)"
+  ) +
+  theme_minimal() +
+  scale_y_continuous(labels = scales::comma)  # Fiyatları virgüllü formatta göster
+
+
+```
+
+### Açıklamalar:
+
+-   **geom_point()**: Ev fiyatları ve binanın yaşı arasındaki ilişkiyi göstermek için dağılım grafiği çiziyoruz.
+
+    **geom_smooth()**: Verilere en uygun doğrusal eğriyi ekliyoruz. Bu, ev fiyatlarının binanın yaşına göre nasıl değiştiğini gösteriyor.
+
+    **scale_y_continuous(labels = scales::comma)**: Y ekseninde fiyatları virgüllü olarak gösteriyoruz (örneğin 1,000,000 TL şeklinde).
+
+    ### Sonuç:
+
+Bu grafikte, binanın yaşı arttıkça ev fiyatlarının nasıl değiştiğini gözlemleyebilirsiniz. Genellikle, eski binaların fiyatları daha düşük olma eğilimindedir, ancak bazı özel durumlar olabilir. Bu grafiği değerlendirerek, ev fiyatlarının binanın yaşı ile nasıl ilişkilendiğine dair bir fikir edinebilirsiniz.
+
+Grafikte dikkat edilmesi gereken noktalar:
+
+-   **Dağılım**: Veriler hangi bölgelerde yoğunlaşıyor? Fiyatlar nasıl dağılmış?
+
+    **Eğri**: Eğri, verilerin genel trendini gösteriyor mu? Fiyatlar ile yaş arasında belirgin bir ilişki var mı?
+
+Bu grafik, ev fiyatları ve binanın yaşı arasındaki ilişkiyi görsel olarak anlamanızı sağlar.
+
+
+
+
+```{r}
+
+
+
+
+
+```
+
+

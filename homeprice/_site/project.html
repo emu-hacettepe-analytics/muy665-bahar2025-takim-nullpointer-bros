@@ -165,6 +165,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#grafikteki-iletişim" id="toc-grafikteki-iletişim" class="nav-link" data-scroll-target="#grafikteki-iletişim">3. <strong>Grafikteki İletişim:</strong></a></li>
   <li><a href="#trend-çizgisi-istatistiksel-doğrulama" id="toc-trend-çizgisi-istatistiksel-doğrulama" class="nav-link" data-scroll-target="#trend-çizgisi-istatistiksel-doğrulama">4. <strong>Trend Çizgisi (İstatistiksel Doğrulama):</strong></a></li>
   <li><a href="#yorum-ve-sonuçlar" id="toc-yorum-ve-sonuçlar" class="nav-link" data-scroll-target="#yorum-ve-sonuçlar">5. <strong>Yorum ve Sonuçlar:</strong></a></li>
+  <li><a href="#açıklamalar" id="toc-açıklamalar" class="nav-link" data-scroll-target="#açıklamalar">Açıklamalar:</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -225,34 +226,31 @@ Attaching package: 'dplyr'</code></pre>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>veri <span class="ot">&lt;-</span> <span class="fu">read_excel</span>(<span class="st">"data/home_price_converted.xlsx"</span>)</span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a><span class="co"># NA değerlerini medyan ile dolduralım (Net_Metrekare ve Fiyat sütunları)</span></span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>veri_cleaned <span class="ot">&lt;-</span> veri <span class="sc">%&gt;%</span></span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">Fiyat =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(Fiyat), <span class="fu">median</span>(Fiyat, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), Fiyat),</span>
-<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">Net_Metrekare =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(Net_Metrekare), <span class="fu">median</span>(Net_Metrekare, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), Net_Metrekare)</span>
-<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a>  )</span>
-<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Ev fiyatlarındaki aykırı değerleri kaldırma</span></span>
-<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a>veri_cleaned <span class="ot">&lt;-</span> veri_cleaned <span class="sc">%&gt;%</span></span>
-<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Fiyat <span class="sc">&lt;</span> <span class="fu">quantile</span>(Fiyat, <span class="fl">0.95</span>))</span>
-<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a><span class="co"># Ev fiyatları ile net metrekare arasındaki ilişki</span></span>
-<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(veri_cleaned, <span class="fu">aes</span>(<span class="at">x =</span> Net_Metrekare, <span class="at">y =</span> Fiyat)) <span class="sc">+</span></span>
-<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">comma_format</span>()) <span class="sc">+</span>  <span class="co"># Ev fiyatını düzgün formatla (binlerce ayraçlı)</span></span>
-<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">comma_format</span>()) <span class="sc">+</span>  <span class="co"># Metrekareyi de düzgün formatla</span></span>
-<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Ev Fiyatları ile Net Metrekare Arasındaki İlişki"</span>,</span>
-<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Net Metrekare"</span>,</span>
-<span id="cb5-33"><a href="#cb5-33" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Ev Fiyatı (TL)"</span></span>
-<span id="cb5-34"><a href="#cb5-34" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb5-35"><a href="#cb5-35" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()  <span class="co"># Temiz tema</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># NA değerlerini medyan ile dolduralım (Net_Metrekare ve Fiyat sütunları)</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>veri_cleaned <span class="ot">&lt;-</span> veri <span class="sc">%&gt;%</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">Fiyat =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(Fiyat), <span class="fu">median</span>(Fiyat, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), Fiyat),</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">Net_Metrekare =</span> <span class="fu">ifelse</span>(<span class="fu">is.na</span>(Net_Metrekare), <span class="fu">median</span>(Net_Metrekare, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), Net_Metrekare)</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>  )</span>
+<span id="cb5-14"><a href="#cb5-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-15"><a href="#cb5-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-16"><a href="#cb5-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Ev fiyatlarındaki aykırı değerleri kaldırma</span></span>
+<span id="cb5-17"><a href="#cb5-17" aria-hidden="true" tabindex="-1"></a>veri_cleaned <span class="ot">&lt;-</span> veri_cleaned <span class="sc">%&gt;%</span></span>
+<span id="cb5-18"><a href="#cb5-18" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Fiyat <span class="sc">&lt;</span> <span class="fu">quantile</span>(Fiyat, <span class="fl">0.95</span>))</span>
+<span id="cb5-19"><a href="#cb5-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-20"><a href="#cb5-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-21"><a href="#cb5-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Ev fiyatları ile net metrekare arasındaki ilişki</span></span>
+<span id="cb5-22"><a href="#cb5-22" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(veri_cleaned, <span class="fu">aes</span>(<span class="at">x =</span> Net_Metrekare, <span class="at">y =</span> Fiyat)) <span class="sc">+</span></span>
+<span id="cb5-23"><a href="#cb5-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb5-24"><a href="#cb5-24" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb5-25"><a href="#cb5-25" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">comma_format</span>()) <span class="sc">+</span>  <span class="co"># Ev fiyatını düzgün formatla (binlerce ayraçlı)</span></span>
+<span id="cb5-26"><a href="#cb5-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span><span class="fu">comma_format</span>()) <span class="sc">+</span>  <span class="co"># Metrekareyi de düzgün formatla</span></span>
+<span id="cb5-27"><a href="#cb5-27" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb5-28"><a href="#cb5-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Ev Fiyatları ile Net Metrekare Arasındaki İlişki"</span>,</span>
+<span id="cb5-29"><a href="#cb5-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Net Metrekare"</span>,</span>
+<span id="cb5-30"><a href="#cb5-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Ev Fiyatı (TL)"</span></span>
+<span id="cb5-31"><a href="#cb5-31" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb5-32"><a href="#cb5-32" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()  <span class="co"># Temiz tema</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
 <pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
 </div>
@@ -335,15 +333,36 @@ Attaching package: 'dplyr'</code></pre>
 <li><strong>Ev fiyatları ile diğer değişkenler arasındaki korelasyon</strong>: Net metrekare dışında, diğer faktörlerin (örneğin, oda sayısı, banyo sayısı, binanın yaşı) ev fiyatları ile ilişkisini inceleyebilirsiniz. Korelasyon analizi yaparak bu değişkenlerin birbirleriyle olan ilişkisini ve ev fiyatlarına ne kadar etki ettiğini görebilirsiniz.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Oda sayısı ve ev fiyatı arasındaki ilişkiyi kutu grafiğiyle gösterelim</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(veri_cleaned, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(Oda_Sayisi), <span class="at">y =</span> Fiyat)) <span class="sc">+</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">"skyblue"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span>  <span class="co"># Kutu grafiği</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Oda Sayısı ve Ev Fiyatı Arasındaki İlişki"</span>,</span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Oda Sayısı"</span>,</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Ev Fiyatı (TL)"</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()  <span class="co"># Temayı sade tutalım</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">options</span>(<span class="at">warn =</span> <span class="sc">-</span><span class="dv">1</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Oda Sayısı ve Fiyat sütunlarındaki NA değerlerini ortalama ile dolduralım</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>veri_cleaned<span class="sc">$</span>Oda_Says <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(veri_cleaned<span class="sc">$</span>Oda_Sayisi)  <span class="co"># Sayısal formata dönüştür</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>veri_cleaned<span class="sc">$</span>Fiyat <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(veri_cleaned<span class="sc">$</span>Fiyat)  <span class="co"># Fiyatı sayısal yapalım</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Hatalı NA değerlerini medyan ile dolduralım</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>veri_cleaned<span class="sc">$</span>Oda_Says[<span class="fu">is.na</span>(veri_cleaned<span class="sc">$</span>Oda_Sayisi)] <span class="ot">&lt;-</span> <span class="fu">median</span>(veri_cleaned<span class="sc">$</span>Oda_Says, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>veri_cleaned<span class="sc">$</span>Fiyat[<span class="fu">is.na</span>(veri_cleaned<span class="sc">$</span>Fiyat)] <span class="ot">&lt;-</span> <span class="fu">median</span>(veri_cleaned<span class="sc">$</span>Fiyat, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a><span class="co"># Oda Sayısına göre ortalama ev fiyatlarını hesaplayalım</span></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a>veri_ortalama <span class="ot">&lt;-</span> veri_cleaned <span class="sc">%&gt;%</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Oda_Sayisi) <span class="sc">%&gt;%</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Ortalama_Fiyat =</span> <span class="fu">mean</span>(Fiyat, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span>
+<span id="cb10-16"><a href="#cb10-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-17"><a href="#cb10-17" aria-hidden="true" tabindex="-1"></a><span class="co"># Çizgi grafiği tekrar çizelim</span></span>
+<span id="cb10-18"><a href="#cb10-18" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(veri_ortalama, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">factor</span>(Oda_Sayisi), <span class="at">y =</span> Ortalama_Fiyat)) <span class="sc">+</span> </span>
+<span id="cb10-19"><a href="#cb10-19" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span>  <span class="co"># Çizgi</span></span>
+<span id="cb10-20"><a href="#cb10-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="dv">2</span>) <span class="sc">+</span>  <span class="co"># Noktalar</span></span>
+<span id="cb10-21"><a href="#cb10-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb10-22"><a href="#cb10-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Oda Sayısı ve Ortalama Ev Fiyatı Arasındaki İlişki"</span>,</span>
+<span id="cb10-23"><a href="#cb10-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Oda Sayısı"</span>,</span>
+<span id="cb10-24"><a href="#cb10-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Ortalama Ev Fiyatı (TL)"</span></span>
+<span id="cb10-25"><a href="#cb10-25" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb10-26"><a href="#cb10-26" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_line()`: Each group consists of only one observation.
+ℹ Do you need to adjust the group aesthetic?</code></pre>
+</div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -380,6 +399,79 @@ Attaching package: 'dplyr'</code></pre>
 <section id="yorum-ve-sonuçlar" class="level3">
 <h3 class="anchored" data-anchor-id="yorum-ve-sonuçlar">5. <strong>Yorum ve Sonuçlar:</strong></h3>
 <p>Grafik üzerinden yapılan değerlendirmede, oda sayısının ev fiyatlarını etkileyen önemli bir faktör olduğunu söyleyebiliriz, ancak bunun yanı sıra lokasyon, binanın yaşı, kat sayısı gibi diğer değişkenlerin de önemli rol oynadığını göz önünde bulundurmalıyız. Grafikten, oda sayısı arttıkça fiyatların arttığını ama bu ilişkinin düz bir çizgi şeklinde değil, bazı noktalar için daha karmaşık olduğunu gözlemleyebiliriz.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ortalama ev fiyatını şehir bazında hesaplayalım</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>veri_sehir <span class="ot">&lt;-</span> veri_cleaned <span class="sc">%&gt;%</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Sehir) <span class="sc">%&gt;%</span>  <span class="co"># Burada doğru kolon ismini kullanıyoruz</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Ortalama_Fiyat =</span> <span class="fu">mean</span>(Fiyat, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(Ortalama_Fiyat))  <span class="co"># Fiyatı azalan sıraya göre sıralayalım</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># En yüksek 5 şehri seçelim</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>veri_sehir_top5 <span class="ot">&lt;-</span> <span class="fu">head</span>(veri_sehir, <span class="dv">5</span>)</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Fiyatları tam sayıya çeviriyoruz</span></span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>veri_sehir_top5<span class="sc">$</span>Ortalama_Fiyat <span class="ot">&lt;-</span> <span class="fu">round</span>(veri_sehir_top5<span class="sc">$</span>Ortalama_Fiyat)</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Grafik</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(veri_sehir_top5, <span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">reorder</span>(Sehir, Ortalama_Fiyat), <span class="at">y =</span> Ortalama_Fiyat)) <span class="sc">+</span></span>
+<span id="cb12-15"><a href="#cb12-15" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat =</span> <span class="st">"identity"</span>, <span class="at">fill =</span> <span class="st">"skyblue"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb12-16"><a href="#cb12-16" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb12-17"><a href="#cb12-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Türkiye Ev Fiyatı Ortalamasında Olan Ilk 5 Sehir"</span>,</span>
+<span id="cb12-18"><a href="#cb12-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Ortalama Ev Fiyatı (TL)"</span></span>
+<span id="cb12-19"><a href="#cb12-19" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb12-20"><a href="#cb12-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb12-21"><a href="#cb12-21" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>)) <span class="sc">+</span>  <span class="co"># X ekseni etiketlerini döndürdük</span></span>
+<span id="cb12-22"><a href="#cb12-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>comma)  <span class="co"># Fiyatları virgüllü formatta göster</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="project_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Binanın yaşını sayısal verilere dönüştürme (Eğer kategorikse)</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>veri_cleaned<span class="sc">$</span>Binanin_Yasi <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(veri_cleaned<span class="sc">$</span>Binanin_Yasi)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Ev fiyatları ile binanın yaşı arasındaki ilişkiyi inceleyelim</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(veri_cleaned, <span class="fu">aes</span>(<span class="at">x =</span> Binanin_Yasi, <span class="at">y =</span> Fiyat)) <span class="sc">+</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"blue"</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span>  <span class="co"># Dağılım noktalarını çiz</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>, <span class="at">color =</span> <span class="st">"red"</span>) <span class="sc">+</span>  <span class="co"># Eğri çizelim</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Ev Fiyatları ve Binanın Yaşı Arasındaki İlişki"</span>,</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Bina Yaşı"</span>,</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Ev Fiyatı (TL)"</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_y_continuous</span>(<span class="at">labels =</span> scales<span class="sc">::</span>comma)  <span class="co"># Fiyatları virgüllü formatta göster</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="project_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="açıklamalar" class="level3">
+<h3 class="anchored" data-anchor-id="açıklamalar">Açıklamalar:</h3>
+<ul>
+<li><p><strong>geom_point()</strong>: Ev fiyatları ve binanın yaşı arasındaki ilişkiyi göstermek için dağılım grafiği çiziyoruz.</p>
+<p><strong>geom_smooth()</strong>: Verilere en uygun doğrusal eğriyi ekliyoruz. Bu, ev fiyatlarının binanın yaşına göre nasıl değiştiğini gösteriyor.</p>
+<p><strong>scale_y_continuous(labels = scales::comma)</strong>: Y ekseninde fiyatları virgüllü olarak gösteriyoruz (örneğin 1,000,000 TL şeklinde).</p>
+<h3 id="sonuç" class="anchored">Sonuç:</h3></li>
+</ul>
+<p>Bu grafikte, binanın yaşı arttıkça ev fiyatlarının nasıl değiştiğini gözlemleyebilirsiniz. Genellikle, eski binaların fiyatları daha düşük olma eğilimindedir, ancak bazı özel durumlar olabilir. Bu grafiği değerlendirerek, ev fiyatlarının binanın yaşı ile nasıl ilişkilendiğine dair bir fikir edinebilirsiniz.</p>
+<p>Grafikte dikkat edilmesi gereken noktalar:</p>
+<ul>
+<li><p><strong>Dağılım</strong>: Veriler hangi bölgelerde yoğunlaşıyor? Fiyatlar nasıl dağılmış?</p>
+<p><strong>Eğri</strong>: Eğri, verilerin genel trendini gösteriyor mu? Fiyatlar ile yaş arasında belirgin bir ilişki var mı?</p></li>
+</ul>
+<p>Bu grafik, ev fiyatları ve binanın yaşı arasındaki ilişkiyi görsel olarak anlamanızı sağlar.</p>
 
 
 </section>
