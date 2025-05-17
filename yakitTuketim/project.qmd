@@ -7,7 +7,7 @@ number-sections: true
 
 *Projemizle ilgili güncellemelerden haberdar olmak için bu alanı takip edin.*
 
-[\[Projemizin ön gösterimi için lütfen tıklayınız\]](https://drive.google.com/file/d/1VYazUHzdzgiUgMhbosEIwkyMWGEYTRzX/view?usp=drive_link)
+[\[Projemizin ön gösterimi için lütfen tıklayınız\]]
 
 # Proje Genel Bakış ve Kapsamı
 
@@ -29,23 +29,19 @@ Bu proje kapsamında, enerji sektöründeki veri odaklı bir yaklaşım kullanar
 
 # Veri
 
-2023 Yılı Elektrik Üretiminin Kaynak Bazlı Saatlik Veri Tabanı
+2023 Yılı Enerji Uretimi Kaynak Bazlı Verisi
 
-## Veri Kaynağı
 
-EPİAŞ(Enerji Piyasaları İşletme A.Ş.) ŞEFFAFLIK PLATFORMU [\[Veri Setine Erişmek için Tıklayınız\]](https://seffaflik.epias.com.tr/home)
 
 ## Veri Hakkında Genel Bilgiler
 
-Veri setimiz, Türkiye'deki elektrik üretim kaynaklarının saatlik olarak üretimini göstermektedir. Toplam 8760 saatlik veri bulunmaktadır, her bir kayıt bir saatlik zaman dilimini temsil eder. Veri seti, çeşitli enerji kaynaklarına göre üretilen elektrik miktarlarını içermektedir.
-
-Tarih: Gözlem yapılan tarih (gün/ay/yıl), Saat: Gözlem yapılan saat (24 saat formatında) ve Üretilen elektrik miktarı Megawatt (MW) cinsindedir.
+Bu veri seti, TotalEnergies şirketine ait 2024 yılına ilişkin enerji satış ve talep verilerini içermektedir. Veri, farklı enerji kaynaklarının saatlik bazda  tüketim miktarlarını göstermektedir ve Avrupa pazarı odağında hazırlanmış olması muhtemeldir.
 
 ## Tercih Sebebi
 
 Bu proje kapsamında, bir grup olarak enerji sektöründe önemli bir sorunu ele almayı amaçladık.
 
-Bu amaç doğrultusunda, enerji üretimi verilerini analiz etmek için bir veri seti seçme kararı aldık. İşte grup olarak bu veri setini seçme nedenlerimiz:
+Bu amaç doğrultusunda, enerji üretimi ve tüketimi üzerine odaklanıp verilerini analiz etmek için bir veri seti seçme kararı aldık. İşte grup olarak bu veri setini seçme nedenlerimiz:
 
 1.  **İşbirliği ve Ortak Hedefler**: Grup üyeleri olarak birlikte çalışarak enerji sektöründeki belirli bir problemi çözmeyi hedefledik. Enerji üretimi verilerini analiz etmek, ortak hedeflerimize ulaşmamızı sağlayacak güçlü bir başlangıç noktasıydı.
 
