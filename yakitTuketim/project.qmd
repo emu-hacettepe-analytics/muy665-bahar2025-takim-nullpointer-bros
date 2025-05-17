@@ -1,9 +1,9 @@
 ---
-title: "Zamanın Akışında Enerji: Türkiye'nin Enerji Kaynakları Üzerine Dinamik Bir Analiz"
+title: "TotalEnergies"
 number-sections: true
 ---
 
-***İNCİ TANELERİ Grubu Proje Sayfasına Hoşgeldiniz***
+***Nullpointer-bros Grubu Proje Sayfasına Hoşgeldiniz***
 
 *Projemizle ilgili güncellemelerden haberdar olmak için bu alanı takip edin.*
 
@@ -261,3 +261,444 @@ ggplot(seasonal_data, aes(x = Mevsim, y = ToplamMiktar, fill = UretimTuru)) +
 
 
 ```
+
+##Yıllık Enerji Üretiminin Kaynaklara Göre Dağılım
+
+Bu grafik, 2024 yılı boyunca enerji üretiminin farklı kaynaklardan sağlanan oranlarını göstermektedir. Her dilim, bir enerji kaynağının toplam üretimdeki yüzdesel payını ifade etmektedir. Aşağıda her enerji kaynağının yorumunu bulabilirsiniz:
+
+🔸 Motorin (Grafikteki en büyük dilim – oranlara bağlı) Motorin, genellikle dizel jeneratörlerde kullanılan fosil bir yakıttır. Enerji üretiminde bu kadar yüksek paya sahip olması, motorinle çalışan santrallerin ya da sistemlerin özellikle küçük ve orta ölçekli üretim tesislerinde yaygın olduğunu gösterir. Yüksek maliyetli olmasına rağmen, ulaşılması kolay ve hızlı devreye alınabilir olduğu için tercih edilir.
+
+🔸 Benzin Benzin, enerji üretiminde nadiren kullanılır. Ancak acil durum jeneratörleri veya küçük ölçekli mobil üretim sistemlerinde yer alabilir. Grafikteki payı görece düşükse, bu onun sadece yedek sistemlerde kullanıldığını destekler niteliktedir.
+
+🔸 LPG (Sıvılaştırılmış Petrol Gazı) LPG, özellikle küçük işletmelerde ve bazı konut tipi sistemlerde enerji üretimi için kullanılabilir. Emisyonu düşük olması ve kolay taşınabilirliği nedeniyle yerel kullanımlarda tercih edilir. Orta düzeyde bir paya sahip olması, bölgesel bazda kullanımını işaret eder.
+
+🔸 Elektrik (Burada üretim kaynağı değil, nihai enerji olarak yorumlanmış olabilir) Veri kümenizde "Elektrik" sütunu, diğer yakıt türleri kullanılarak üretilen elektrik enerjisini ifade ediyor olabilir. Bu nedenle, toplam üretimin en büyük kısmını oluşturması doğaldır. Elektrik, hem fosil hem yenilenebilir kaynaklardan üretilebilir, dolayısıyla tüm sistemin çıktısını simgeler.
+
+🔸 Biyoyakıt Organik atıklar, bitkisel yağlar veya tarım artıkları gibi kaynaklardan elde edilen biyoyakıt, sürdürülebilir enerji üretiminde önemli bir yere sahiptir. Grafikteki payı, Türkiye'deki veya veri setinizin temsil ettiği sistemlerde biyoyakıt kullanımının henüz sınırlı olduğunu göstermektedir. Ancak bu oran önümüzdeki yıllarda artış eğilimindedir.
+
+📌 Genel Değerlendirme: Enerji üretimi halen büyük ölçüde fosil yakıtlar (motorin, benzin, LPG) üzerinden sağlanmaktadır.
+
+Yenilenebilir enerji kullanımı (biyoyakıt) henüz düşük seviyededir, ancak çevreci yaklaşımlar ve politikalarla önemi artmaktadır.
+
+Elektrik sütunu nihai üretimi temsil ettiği için mutlak değer anlamında en yüksek olabilir, ancak analizde kaynak bazlı dağılım dikkate alınmalıdır.
+
+NOT: İlgili firma çevreci yaklaşımları desteklese bile firmdan halen fosil yakıt satın alınma oranı'da çok yüksek.
+
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)
+
+# Enerji kaynaklarına göre toplamları hesapla
+energy_totals <- colSums(data[, c("Motorin", "Benzin", "LPG", "Elektrik", "Biyoyakit")])
+
+# Toplam üretim
+total_production <- sum(energy_totals)
+
+# Yüzdelik hesaplamaları yap
+energy_percentages <- energy_totals / total_production * 100
+
+# Enerji kaynaklarını ve yüzdelerini bir dataframe'e çevir
+energy_df <- data.frame(Enerji_Kaynagi = names(energy_percentages), Yuzde = energy_percentages)
+
+# Pie chart çiz
+pie(energy_df$Yuzde, labels = paste(energy_df$Enerji_Kaynagi, 
+                                    sprintf("(%.1f%%)", energy_df$Yuzde)), 
+    main = "Yıllık Enerji Satis Dagilimi",
+    col = rainbow(length(energy_df$Yuzde)))
+
+# Efsane ekleme
+legend("topright", legend = energy_df$Enerji_Kaynagi, fill = rainbow(length(energy_df$Yuzde)))
+
+```
+
+# Hidrokarbon Kaynakların Detaylı Satış Dağılımı
+
+**Ocak Ayı**: Yılın başında motorin ve benzin kullanımı yüksek seviyelerde görülüyor. Bu, soğuk havalarda özellikle ısıtma sistemleri, ulaşım ve endüstriyel taleplerin motorin ve benzin tüketimini artırdığını gösteriyor. Yenilenebilir kaynaklar ise mevsim koşullarından dolayı düşük düzeyde kalmış olabilir.
+
+**Nisan Ayı**: İlkbahar aylarında motorin ve benzin kullanımı azalmaya başlamış. Baharın gelişiyle birlikte ısıtma ihtiyacı azalırken, yenilenebilir enerji üretimi (örneğin güneş) artış eğiliminde. Aynı şekilde biyoyakıt kullanımı sabit bir çizgide devam etmiş.
+
+**Temmuz Ayı**: Yaz aylarında enerji ihtiyacı özellikle klima kullanımıyla birlikte artmış olabilir. Bu nedenle motorin ve benzin kullanımı tekrar artış göstermiştir. Güneşli hava koşulları, yenilenebilir enerji üretiminde de belirgin bir yükselişe neden olmuştur. Biyoyakıt, diğer kaynaklara göre daha düşük ama sabit bir katkı sunmaktadır.
+
+**Ekim Ayı**: Sonbaharın gelişiyle birlikte motorin ve benzin tüketimi yeniden artışa geçmiş, bu da ısıtma ve ulaşım ihtiyaçlarının devreye girmesinden kaynaklanıyor olabilir. Yenilenebilir kaynakların üretimi, yaz aylarına göre azalmaya başlamış. Biyoyakıt kullanımı ise stabil şekilde sürmektedir.
+
+**R kodu:**
+
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(lubridate)
+
+
+# Aylık toplamları hesapla ve hidrokarbon kaynaklarına göre ayır
+monthly_hydrocarbons <- data %>%
+  mutate(Ay = floor_date(Tarih, "month")) %>%
+  group_by(Ay) %>%
+  summarise(
+    Motorin = sum(Motorin),
+    Biyoyakit = sum(Biyoyakit),
+    Benzin = sum(Benzin),
+    Yenilenebilir = sum(Yenilenebilir),
+    .groups = 'drop'
+  )
+
+# Erişilebilir format için veriyi long formata çevir
+monthly_long <- pivot_longer(monthly_hydrocarbons, cols = c(Motorin, Biyoyakit, Benzin, Yenilenebilir),
+                             names_to = "Enerji_Kaynagi", values_to = "Uretim")
+
+# Grafik çiz
+ggplot(monthly_long, aes(x = Ay, y = Uretim, fill = Enerji_Kaynagi)) +
+  geom_bar(stat = "identity", position = position_dodge()) +
+  scale_fill_brewer(palette = "Set1") +
+  labs(title = "Aylık Hidrokarbon Enerji Satış(Talep) Dağılımı",
+     x = "Ay",
+     y = "Toplam Uretim (MWh)",
+     fill = "Enerji Kaynağı") +
+  theme_minimal()
+```
+# Fosil ve Yenilenebilir Enerjinin Talep Dağılımı
+Bu grafik, 2024 yılı boyunca fosil yakıtlar ve yenilenebilir enerji kaynaklarının toplam enerji üretimi (veya talep) içindeki oranlarını göstermektedir. Pasta grafiğinde her dilim, belirli bir enerji kategorisinin toplam tüketim içerisindeki yüzdesini temsil etmektedir.
+
+📌 Ana Bulgular:
+Fosil Yakıtlar: Motorin, benzin gibi fosil kaynaklar toplam talebin büyük bir bölümünü oluşturmaktadır. Bu durum, halen geleneksel enerji kaynaklarına yüksek düzeyde bağımlı olunduğunu göstermektedir.
+
+Yenilenebilir Enerji: Biyoyakıt ve yenilenebilir üretim kalemlerinin oluşturduğu bu kategori, sürdürülebilir enerjiye geçiş çabalarının bir göstergesidir. Oranı, enerji dönüşüm sürecinin ne kadar ilerlediğini değerlendirmek açısından önemlidir.
+
+💬 Genel Değerlendirme:
+Veriler, enerji üretim ve tüketim dengesinde fosil yakıtların hâlâ baskın olduğunu ortaya koymaktadır. Ancak yenilenebilir kaynakların grafik üzerindeki payı, enerji politikalarının ve teknolojik yatırımların bu yönde ilerlediğini göstermektedir.
+
+Enerji arz güvenliği, çevresel etkiler ve ekonomik sürdürülebilirlik açısından yenilenebilir kaynakların payının artırılması gerekliliği açıktır. Bu dağılım, enerji dönüşüm sürecinin mevcut durumunu gözler önüne sererek karar vericiler ve politika yapıcılar için önemli bir referans sağlamaktadır.
+
+
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)
+
+# Sütun adlarını düzelt (garantili olması için)
+names(data) <- make.names(names(data))
+
+# Fosil ve yenilenebilir toplamlarını hesapla
+fosil_toplam <- rowSums(data[, c("Motorin", "Benzin")], na.rm = TRUE)
+yenilenebilir_toplam <- rowSums(data[, c("Biyoyakit", "Yenilenebilir")], na.rm = TRUE)
+
+# Yıllık toplam üretimi hesapla
+toplam_fosil <- sum(fosil_toplam)
+toplam_yenilenebilir <- sum(yenilenebilir_toplam)
+
+# Veri çerçevesi oluştur
+karsilastirma_df <- data.frame(
+  Kaynak = c("FosiYakittlar", "YenilenebilirEnerji"),
+  Uretim = c(toplam_fosil, toplam_yenilenebilir)
+)
+ggplot(karsilastirma_df, aes("", Uretim, fill = Kaynak)) + geom_bar(stat = "identity", width = 1) + coord_polar("y") + theme_void()
+
+
+
+```
+
+
+
+## Toplam Üretimin Fosil Yakıt Üretimi  İle Karşılaştırılması
+
+Bu analizde, 2024 yılı boyunca Türkiye’de (veya çalışılan sistemde) üretilen toplam enerjinin ne kadarlık kısmının fosil yakıtlardan sağlandığı incelenmiştir. Kullanılan grafiklerde:
+
+Mavi renkli sütunlar, her ayki toplam enerji üretimini,
+
+Sarı renkli sütunlar, bu toplamın içinde fosil yakıtlarla (motorin, LPG, fuel oil, biyoyakıt) elde edilen kısmı göstermektedir.
+
+İkinci grafikte ise kırmızı çizgi ile fosil enerjinin yüzdesel oranı izlenmektedir.
+
+📆 Aylık Değerlendirme:
+Ocak (2024-01): Soğuk hava nedeniyle enerji ihtiyacı artmıştır. Fosil enerji oranı yüksek; sarı sütun, maviye oldukça yakındır.
+
+Şubat: Enerji üretimi bir miktar düşse de fosil kaynakların oranı hâlâ yüksektir. Isınma ihtiyacı devam etmektedir.
+
+Mart - Nisan: Havaların ısınmasıyla birlikte enerji talebi dengelenmiştir. Fosil enerji oranı düşmüştür; sarı sütun maviye göre daha kısa.
+
+Mayıs - Haziran: Enerji üretimi artmaya başlar. Ancak bu artışın çoğu yenilenebilir kaynaklardan geldiği için fosil oranı görece düşüktür.
+
+Temmuz - Ağustos: Yaz aylarında enerji talebi zirve yapar (klima ve soğutma etkisi). Hem mavi hem sarı sütunlar yüksektir. Fosil kaynak kullanımı yeniden artar.
+
+Eylül: Enerji üretimi düşmeye başlar. Fosil oranı da nispeten azalır.
+
+Ekim - Kasım: Enerji üretimi sabit kalırken fosil kaynaklara dönüş başlar, oran tekrar yükselişe geçer.
+
+Aralık: Kışın gelişiyle birlikte fosil enerji oranı en yüksek seviyelere yaklaşır. Sarı sütun, maviye oldukça yakın ve kırmızı çizgi grafikte yükseliştedir.
+
+📌 Genel Yorum:
+Grafiklerde görüldüğü üzere, fosil enerji kullanımı mevsimsel olarak dalgalanmaktadır:
+
+Kışın ısınma,
+
+Yazın ise soğutma ihtiyacı fosil enerjiye olan talebi artırmaktadır.
+
+Bu da, fosil kaynakların hâlâ enerji üretiminde önemli rol oynadığını gösterir. Yenilenebilir kaynaklara geçiş sürecinin hızlanması, bu dalgalanmanın etkilerini azaltabilir.
+
+**R kodu:**
+
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(lubridate)
+
+# Veriyi yükle
+data <- read_csv2("data/yakitTuketimcs.csv", locale = locale(encoding = "ISO-8859-9"))
+
+# Tarih formatını düzelt
+data$Tarih <- dmy(data$Tarih)  + years(1)
+
+# Aylık toplamları hesapla
+monthly_data <- data %>%
+  mutate(Ay = floor_date(Tarih, "month")) %>%
+  group_by(Ay) %>%
+  summarise(
+    Toplam = sum(Toplam),
+    Hidrokarbon = sum(Motorin + LPG + FuelOil + Biyoyakit ),
+    .groups = 'drop'
+  )
+
+# Yüzdesel dağılımı hesapla
+monthly_data$HidrokarbonYuzde = (monthly_data$Hidrokarbon / monthly_data$Toplam) * 100
+
+# Grafik çiz
+ggplot(monthly_data, aes(x = Ay)) +
+  geom_col(aes(y = Toplam), fill = "blue", alpha = 0.7) +
+  geom_col(aes(y = Hidrokarbon), fill = "yellow", alpha = 0.7) +
+  labs(title = "Aylık Toplam ve Fosil Enerji Üretimi", x = "Ay", y = "Enerji Üretimi (MWh)") +
+  theme_minimal()
+
+# Yüzdelik dağılım grafiği
+ggplot(monthly_data, aes(x = Ay, y = HidrokarbonYuzde, group = 1)) +
+  geom_line(color = "darkred", size = 1) +
+  geom_point(color = "darkred", size = 2) +
+  labs(title = "Fosil Enerji Üretiminin Yüzdesel Dağılımı", x = "Ay", y = "Yüzde (%)") +
+  theme_minimal() +
+coord_cartesian(ylim = c(33, 55)) # y eksenini sınırlandırıyoruz
+```
+
+
+
+## Toplam Üretimin Yenilenebilir Enerji Üretimi İle Karşılaştırılması
+
+Bu grafikte, 2024 yılı boyunca her ay üretilen toplam enerji ile yenilenebilir enerji miktarları karşılaştırmalı olarak gösterilmiştir.
+Mavi renk, toplam enerji üretimini;
+Yeşil renk, aynı ayda yenilenebilir kaynaklardan üretilen enerji miktarını temsil etmektedir.
+
+✅ Ocak 2024
+Toplam enerji üretimi yüksek.
+
+Yenilenebilir enerji üretimi de oldukça güçlü; yaklaşık %40-45 bandında.
+
+Kış ayı olmasına rağmen yenilenebilir kaynakların ciddi katkı sağladığı görülüyor. Bu, barajlı hidroelektrik ve biyoyakıt üretiminin etkili olduğunu düşündürüyor.
+
+✅ Şubat - Mart 2024
+Toplam üretim bir miktar azalsa da, yenilenebilir enerji oranı korunmuş.
+
+Rüzgar enerjisi veya biyokütle gibi mevsimden bağımsız çalışan sistemler burada etkili olmuş olabilir.
+
+✅ Nisan - Mayıs 2024
+Bahar aylarında toplam enerji üretimi dengeli seyrederken, yeşil alanın genişliği dikkat çekiyor.
+
+Bu dönem, barajlı enerji üretiminin yüksek olduğu zamanlar olabilir. Suyun bol olduğu dönemlerde hidroelektrik üretimi artar.
+
+✅ Haziran - Temmuz 2024
+Yaz aylarında toplam enerji üretimi zirve yapıyor. Bu, artan elektrik talebini (klima kullanımı gibi) yansıtır.
+
+Yenilenebilir enerji üretimi de artmış durumda, ancak toplam üretimin biraz altında kalıyor. Bu artış, güneş enerjisinden kaynaklanıyor olabilir.
+
+✅ Ağustos 2024
+Hem toplam hem de yenilenebilir enerji üretimi yüksek.
+
+Yazın sonuna doğru hâlâ güneşten güçlü üretim elde ediliyor olabilir.
+
+✅ Eylül - Ekim 2024
+Sonbaharda toplam üretim düşmeye başlasa da yenilenebilir üretimin oranı sabit kalıyor.
+
+Bu, mevsim geçişlerinde bile yenilenebilir kaynakların üretimdeki istikrarını gösteriyor.
+
+✅ Kasım - Aralık 2024
+Kışın yaklaşmasıyla toplam üretim yeniden yükselişte.
+
+Yenilenebilir üretim ise hafif düşse de hâlâ önemli oranda katkı sağlıyor.
+
+Kış barajlarının, jeotermal ve biyokütlenin rolü artmış olabilir.
+
+📌 Genel Değerlendirme
+Toplam Enerji Üretimi: 2024 yılı boyunca mevsimsel talebe göre dalgalanmıştır. Yaz ve kış aylarında zirve yapmıştır.
+
+Yenilenebilir Enerji Üretimi: Yıl boyunca sabit ve güçlü bir katkı sağlamıştır. Her ay toplam üretimin en az üçte birini, bazı aylarda ise neredeyse yarısını karşılamıştır.
+
+Bu veriler, Türkiye’nin enerji üretiminde yenilenebilir kaynakların ne kadar stratejik bir öneme sahip olduğunu ortaya koymaktadır. Gelecekte bu kaynakların payının daha da artırılması, hem çevre hem de enerji bağımsızlığı açısından büyük fayda sağlayacaktır.
+
+**R kodu:**
+
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(lubridate)
+
+# Veriyi oku
+data <- read_csv2("data/yakitTuketimcs.csv", locale = locale(encoding = "ISO-8859-9"))
+
+# Tarih ve saat sütunlarını birleştir
+data$DateTime <- dmy_hms(paste(data$Tarih, data$Saat))
+
+# Kullanılmayan sütunları çıkar
+data <- data %>% select(-Tarih, -Saat)
+
+# Aylık bazda gruplama ve toplama
+monthly_data <- data %>%
+  mutate(Ay = floor_date(DateTime, "month")) %>%
+  group_by(Ay) %>%
+  summarise(
+    Toplam = sum(Toplam, na.rm = TRUE),
+    Yenilenebilir = sum(Yenilenebilir + Biyoyakit +Elektrik , na.rm = TRUE),
+    .groups = "drop"
+  )
+
+# Yüzde hesapla (geçersiz değerleri otomatik engelle)
+monthly_data <- monthly_data %>%
+  mutate(YenilenebilirYuzde = ifelse(Toplam > 0, (Yenilenebilir / Toplam) * 100, NA)) %>%
+  filter(!is.na(YenilenebilirYuzde), is.finite(YenilenebilirYuzde))
+
+# Grafik 1: Toplam vs Yenilenebilir enerji üretimi
+ggplot(monthly_data, aes(x = Ay)) +
+  geom_col(aes(y = Toplam), fill = "blue", alpha = 0.6) +
+  geom_col(aes(y = Yenilenebilir), fill = "green", alpha = 0.7) +
+  labs(title = "Aylık Toplam ve Yenilenebilir Enerji Üretimi",
+       x = "Ay", y = "Enerji Üretimi (MWh)") +
+  theme_minimal()
+
+# Grafik 2: Yenilenebilir enerjinin yüzdesel oranı
+ggplot(monthly_data, aes(x = Ay, y = YenilenebilirYuzde, group = 1)) +
+  geom_line(color = "red", size = 1) +
+  geom_point(color = "red", size = 2) +
+  labs(title = "Yenilenebilir Enerji Satis Dağılımı(Yüzdesel Dağılım)",
+       x = "Ay", y = "Yüzde (%)") +
+  theme_minimal() +
+  coord_cartesian(ylim = c(35, 42))  # isteğe göre aralık değiştirilebilir
+
+
+```
+
+
+## 2024 Yılı Çevre Dostu Enerjinin Talep İncelemesi
+
+Bu grafik, 2024 yılı boyunca üretilen çevre dostu (yenilenebilir) enerji kaynaklarının aylık değişimini ve dağılımını göstermektedir. Üç ana yenilenebilir kaynak incelenmiştir:
+
+Elektrik (yenilenebilir kaynaklardan elde edilen),
+
+Biyoyakıt,
+
+Yenilenebilir başlığı altında toplanan diğer enerji türleri (örneğin: rüzgar, güneş, hidroelektrik vb.).
+
+Her bir ayda bu kaynaklardan ne kadar üretim yapıldığı, renkli sütunlarla karşılaştırmalı olarak sunulmuştur.
+
+ Öne Çıkan Gözlemler:
+İlkbahar ve Yaz Aylarında Artış:
+Özellikle Nisan–Ağustos ayları arasında tüm yenilenebilir kaynaklarda üretim artışı dikkat çekmektedir. Bu, barajlardaki su seviyelerinin yükselmesi (hidroelektrik), güneş ışığı süresinin artması ve rüzgar verimliliğinin yükselmesiyle açıklanabilir.
+
+Biyoyakıt Üretimi Sabit ve Güçlü:
+Biyoyakıt kaynaklı enerji üretimi yılın her ayında istikrarlı bir düzeyde seyretmiştir. Bu durum, biyoyakıt altyapısının kararlı çalıştığını ve mevsimsel dalgalanmalardan çok fazla etkilenmediğini göstermektedir.
+
+Elektrik Üretiminde Dalgalanma:
+Yenilenebilir elektrik üretimi (özellikle güneş ve rüzgar gibi kaynaklardan) mevsimsel farklılıklar göstermiştir. Yaz aylarında zirveye ulaşan üretim, kış aylarında düşüş göstermektedir.
+
+✅enel Değerlendirme:
+Yenilenebilir enerji kaynakları, 2024 yılı boyunca Türkiye’nin enerji üretiminde düzenli bir rol oynamış, özellikle yaz aylarında yüksek katkı sağlamıştır.
+
+Mevsimsel etkiler, elektrik üretiminde gözle görülür dalgalanmalara yol açarken, biyoyakıt gibi sürekli üretim sağlayan kaynaklar daha dengeli bir grafik sunmuştur.
+
+Bu analiz, çevre dostu enerji politikalarının güçlendirilmesi ve mevsimsel üretim farklarının daha iyi planlanması açısından önem taşımaktadır.
+
+
+
+**R kodu:**
+
+```{r, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(lubridate)
+
+# Aylık toplamları hesapla ve yenilenebilir enerji kaynaklarına göre ayır
+monthly_renewables <- data %>%
+  mutate(Ay = floor_date(DateTime, "month")) %>%
+  group_by(Ay) %>%
+  summarise(
+    Biyoyakit = sum(Biyoyakit),
+    Elektrik = sum(Elektrik),
+    Yenilenebilir = sum(Yenilenebilir),
+    Biyoyakit = sum(Biyoyakit),
+    .groups = 'drop'
+  )
+
+# Erişilebilir format için veriyi long formata çevir
+monthly_long <- pivot_longer(monthly_renewables, cols = c( Biyoyakit, Elektrik, Yenilenebilir, Biyoyakit),
+                             names_to = "Enerji_Kaynagi", values_to = "Uretim")
+
+# Grafik çiz
+ggplot(monthly_long, aes(x = Ay, y = Uretim, fill = Enerji_Kaynagi)) +
+  geom_bar(stat = "identity", position = position_dodge()) +
+  scale_fill_brewer(palette = "Set3") +
+  labs(title = "Aylık Yenilenebilir Enerji Kaynaklarının Dağılımı",
+       x = "Ay",
+       y = "Toplam Üretim (MWh)",
+       fill = "Enerji Kaynağı") +
+  theme_minimal() +
+coord_cartesian(ylim = c(0, 1600000)) # y eksenini sınırlandırıyoruz
+```
+
+
+# 2024 Yılı TotalEnergies Yenilenebilir Enerji Talebi Üzerine Genel Değerlendirme
+ Giriş: Enerji Üretiminin Dönüşümü
+Dünya genelinde olduğu gibi Türkiye’de de yenilenebilir enerji kaynaklarının teşviki, karbon salınımını azaltma ve iklim değişikliğiyle mücadele açısından büyük önem taşımaktadır. Güneş, rüzgar, biyoyakıt ve hidroelektrik gibi kaynakların kullanımı, fosil yakıt bağımlılığını azaltmanın anahtarıdır.
+
+Ancak 2024 yılına ait veriler, Türkiye’de çevre dostu enerjiye geçişin hâlâ sınırlı kaldığını, fosil yakıtların ise enerji üretiminde baskın konumunu sürdürdüğünü göstermektedir.
+
+ Yenilenebilir Enerji Üretiminin Durumu
+Yıl boyunca yenilenebilir kaynaklardan üretilen enerji miktarı, toplam üretimin yalnızca belirli oranlarını karşılayabilmiştir. Özellikle:
+
+Biyoyakıt üretimi her ay nispeten sabit kalmış, ancak toplam talebi karşılamada düşük payda kalmıştır.
+
+Yenilenebilir elektrik üretimi (muhtemelen güneş, rüzgar, hidroelektrik) mevsimsel dalgalanmalardan ciddi şekilde etkilenmiştir. Yaz aylarında üretim artarken, kış aylarında düşmüştür.
+
+Toplam üretim içindeki oranı, birçok ayda %35–40 bandını aşamamıştır. Bu oran, çevreci enerji kaynaklarının potansiyelinden tam olarak faydalanılamadığını göstermektedir.
+
+️ Fosil Yakıtların Ağırlığı
+Veriler aynı zamanda fosil yakıtların (motorin, LPG, fuel oil) enerji üretimindeki baskın rolünü net biçimde ortaya koymuştur:
+
+Ocak, Temmuz ve Aralık gibi talebin yoğun olduğu aylarda fosil yakıt kullanımı belirgin şekilde artmıştır.
+
+Yaz aylarında artan klima ihtiyacı ve kış aylarında ısınma gereksinimi, fosil kaynakların hâlâ “vazgeçilmez” olarak görülmesine neden olmuştur.
+
+Özellikle Motorin ve Fuel Oil gibi yüksek emisyonlu kaynaklar, toplam enerji üretiminde önemli pay sahibidir. Bu durum, Türkiye'nin karbon ayak izini artıran başlıca faktörlerden biridir.
+
+📉 Neden Yenilenebilir Enerji Talebi Düşük Kalıyor?
+Yenilenebilir enerjiye olan talebin düşük kalmasının ardında birkaç temel neden olabilir:
+
+Altyapı Yetersizlikleri:
+Güneş ve rüzgar enerjisi sistemlerinin yaygınlaştırılması için gerekli teknolojik altyapı hâlâ sınırlı bölgelerde yoğunlaşmaktadır.
+
+Mevsimsel Dengesizlik:
+Güneş ve rüzgar gibi kaynaklar doğaya bağlı olduğu için, üretim istikrarı açısından dezavantajlı olabilir. Bu durum enerji yönetimini zorlaştırır.
+
+Ekonomik Tercihler ve Maliyetler:
+Fosil yakıtlar hâlâ birçok durumda daha ucuz, daha erişilebilir ve enerji santrallerinde daha hızlı devreye alınabilir kaynaklardır. Bu da yenilenebilir enerjiye yatırımı sınırlandıran bir etkendir.
+
+Enerji Politikalarının Dönüşüm Hızı:
+Türkiye’nin enerji stratejilerinde yenilenebilir kaynaklar desteklenmektedir; ancak uygulamadaki yavaşlık, fosil yakıtların kullanımını kısa vadede azaltamamaktadır.
+
+Geleceğe Dair Öneriler
+Türkiye’nin enerji üretiminde çevre dostu dönüşümü hızlandırması için bazı adımların atılması kritik önem taşımaktadır:
+
+Yenilenebilir enerji teşviklerinin artırılması,
+
+Depolama teknolojilerinin (batarya, hidrojen gibi) geliştirilmesi,
+
+Güneş ve rüzgar santrallerinin yaygınlaştırılması,
+
+Enerji verimliliği politikalarının güçlendirilmesi,
+
+Ve fosil yakıtlara olan yapısal bağımlılığın azaltılması.
+
+Bu adımlar atılmadığı sürece, fosil yakıtların enerji üretimindeki ağırlığı devam edecek ve Türkiye’nin karbon emisyonları yüksek kalmaya devam edecektir.
+
+📌 Sonuç
+2024 yılı datasetine göre ,çevreci enerji üretiminde gelişme kaydettiğini ancak hâlâ fosil yakıtların egemen olduğunu göstermektedir. Mevsimsel koşullara bağlı üretim dalgalanmaları, altyapı yetersizlikleri ve kısa vadeli ekonomik tercihler, yenilenebilir kaynakların yeterince değerlendirilememesine yol açmaktadır.
+
+Enerji üretiminde sürdürülebilirlik ve çevresel sorumluluk, ancak yenilenebilir kaynaklara olan talebin artması ve buna yönelik güçlü politikaların uygulanmasıyla mümkün olacaktır.
+
+
