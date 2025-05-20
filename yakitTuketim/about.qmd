@@ -16,6 +16,4 @@ format: html
 
     **Dönem:** 2024-2025 Bahar\
 
-    **Teslim Tarihi:** 11 Mayıs 2025
-
 # 
